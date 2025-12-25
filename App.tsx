@@ -1,23 +1,23 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { StyleSheet } from "react-native";
+import Navigation from "./src/components/website/navigation/navBarTop";
 
 export default function App() {
   return (
     <LinearGradient
       style={styles.container}
-      colors={["#0f1629", "#0d1f1f"]}
+      colors={["#091121", "#112e36"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
     >
-      <Text>Inital Home Screen</Text>
+      <Navigation/>
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    flex: 1
   },
 });
