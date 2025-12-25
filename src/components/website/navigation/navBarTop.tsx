@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import { styles } from "./style";
+// import RegionSwitch from "../common/regionSwitch";
 
 export default function Navigation() {
   return (
@@ -33,8 +34,9 @@ export default function Navigation() {
             <Text style={styles.headerText}>More</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.switchView}>
-        </View>
+        {/* <View>
+            <RegionSwitch/>
+        </View> */}
       </View>
     </View>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -38,7 +37,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   headerText: {
-    color: "#a5abb3",
+    color: "#bdc4cf",
     fontSize: 15,
   },
   /** Header Switch Area */
