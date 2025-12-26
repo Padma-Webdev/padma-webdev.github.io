@@ -29,137 +29,24 @@ export default function ContactUsContainer() {
       <View
         style={
           isSmallScreen
-            ? {
-                width: "90%",
-                height: "37%",
-                marginTop: 20,
-                flexDirection: "row",
-                alignSelf: "center",
-                justifyContent: "space-between",
-              }
-            : {
-                width: "35%",
-                height: "37%",
-                marginTop: 20,
-                flexDirection: "row",
-                alignSelf: "center",
-                justifyContent: "space-between",
-              }
+            ? contactStyles.buttonViewMobile
+            : contactStyles.buttonViewWeb
         }
       >
-        <View
-          style={{
-            backgroundColor: "#0F1727",
-            width: "48%",
-            borderRadius: 15,
-            borderWidth: 2,
-            borderColor: "#06443e",
-          }}
-        >
-          <View
-            style={{
-              margin: "7%",
-            }}
-          >
-            <Mail
-              style={{
-                color: "#23CFBB",
-                height: "20%",
-                width: "20%",
-                alignSelf: "flex-start",
-                padding: 4,
-                backgroundColor: "#062421",
-                borderRadius: 10,
-              }}
-            />
-            <Text
-              style={{
-                color: "white",
-                marginTop: 15,
-                fontSize: 22,
-                fontWeight: "400",
-              }}
-            >
-              Email Us
-            </Text>
-            <Text
-              style={{
-                color: "#B1BABA",
-                marginTop: 10,
-                fontSize: 15,
-                fontWeight: "400",
-              }}
-            >
-              Send us an email anytime
-            </Text>
-            <Text
-              style={{
-                color: "#23CFBB",
-                marginTop: 10,
-                fontSize: 17,
-                fontWeight: "400",
-              }}
-            >
-              info@medtutor.co
-            </Text>
+        <View style={contactStyles.buttonStyle}>
+          <View style={contactStyles.buttonMargin}>
+            <Mail style={contactStyles.iconStyle} />
+            <Text style={contactStyles.titleText}>Email Us</Text>
+            <Text style={contactStyles.subTitle}>Send us an email anytime</Text>
+            <Text style={contactStyles.infoText}>info@medtutor.co</Text>
           </View>
         </View>
-        <View
-          style={{
-            backgroundColor: "#0F1727",
-            width: "48%",
-            borderRadius: 15,
-            borderWidth: 2,
-            borderColor: "#06443e",
-          }}
-        >
-          <View
-            style={{
-              // backgroundColor: "red",
-              margin: "7%",
-            }}
-          >
-            <Phone
-              style={{
-                color: "#23CFBB",
-                height: "20%",
-                width: "20%",
-                alignSelf: "flex-start",
-                padding: 4,
-                backgroundColor: "#062421",
-                borderRadius: 10,
-              }}
-            />
-            <Text
-              style={{
-                color: "white",
-                marginTop: 15,
-                fontSize: 22,
-                fontWeight: "400",
-              }}
-            >
-              Call Us
-            </Text>
-            <Text
-              style={{
-                color: "#B1BABA",
-                marginTop: 10,
-                fontSize: 15,
-                fontWeight: "400",
-              }}
-            >
-              Mon-Fri from 8am to 6pm
-            </Text>
-            <Text
-              style={{
-                color: "#23CFBB",
-                marginTop: 10,
-                fontSize: 17,
-                fontWeight: "400",
-              }}
-            >
-              +1 (555) 123-4567
-            </Text>
+        <View style={contactStyles.buttonStyle}>
+          <View style={contactStyles.buttonMargin}>
+            <Phone style={contactStyles.iconStyle} />
+            <Text style={contactStyles.titleText}>Call Us</Text>
+            <Text style={contactStyles.subTitle}>Mon-Fri from 8am to 6pm</Text>
+            <Text style={contactStyles.infoText}>+1 (555) 123-4567</Text>
           </View>
         </View>
       </View>
