@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import { styles } from "./style";
 import useDimensions from "../common/dimensions";
@@ -9,14 +9,84 @@ export default function Navigation() {
   const screenWidth = dimensions.window.width;
   const isSmallScreen = screenWidth < 740;
 
+  const [region, setRegion] = useState(true);
+  const regionSwitchROI = () => {
+    setRegion(true);
+  };
+  const regionSwitchUK = () => {
+    setRegion(false);
+  };
+
+  useEffect(() => {}, [region]);
+  console.log(region);
+
   const regionalSwitch = () => {
     return (
       <View style={styles.reigonalSwitchView}>
-        <TouchableOpacity style={styles.switchButton}>
+        <TouchableOpacity
+          style={region ? styles.activeRegion : styles.switchButton}
+          onPress={regionSwitchROI}
+        >
           <Text style={styles.buttonText}>🇮🇪 IE</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.switchButton}>
+        <TouchableOpacity
+          style={!region ? styles.activeRegion : styles.switchButton}
+          onPress={regionSwitchUK}
+        >
           <Text style={styles.buttonText}>🇬🇧 UK</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  const coursesDataSwitch = () => {
+    const country = region;
+    return country ? (
+      <View style={styles.headerContentSpace}>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>HPAT</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Leaving Cert Grinds</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Junior Cert Grinds</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Application Packages</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Free Resources</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>More</Text>
+        </TouchableOpacity>
+      </View>
+    ) : (
+      <View style={styles.headerContentSpace}>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>UCAT</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Personal Statement</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Interviews</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Application Packages</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>A Level</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Dentistry</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Application Packages</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.headerText}>Free Resources</Text>
         </TouchableOpacity>
       </View>
     );
@@ -38,26 +108,7 @@ export default function Navigation() {
           </TouchableOpacity>
         ) : (
           <>
-            <View style={styles.headerContentSpace}>
-              <TouchableOpacity>
-                <Text style={styles.headerText}>HPAT</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.headerText}>Leaving Cert Grinds</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.headerText}>Junior Cert Grinds</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.headerText}>Application Packages</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.headerText}>Free Resources</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Text style={styles.headerText}>More</Text>
-              </TouchableOpacity>
-            </View>
+            {coursesDataSwitch()}
             <View style={{ alignSelf: "center", marginRight: "1%" }}>
               {regionalSwitch()}
             </View>

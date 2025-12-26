@@ -59,7 +59,6 @@ export const heroStyles = StyleSheet.create({
     flexDirection: "row",
   },
     buttonMobile: {
-    // marginLeft: "4%",
     width: "50%",
     borderWidth: 2,
     height: "75%",

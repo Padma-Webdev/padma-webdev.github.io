@@ -72,5 +72,10 @@ export const styles = StyleSheet.create({
     width: "49%",
     borderRadius: 10,
   },
+  activeRegion: {
+    width: "49%",
+    borderRadius: 9,
+    backgroundColor: "#3A5EF2",
+  },
   buttonText: { color: "white", fontSize: 13, alignSelf: "center" },
 });
