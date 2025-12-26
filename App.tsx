@@ -4,6 +4,7 @@ import { ScrollView, StyleSheet } from "react-native";
 import Navigation from "./src/components/website/navigation/navBarTop";
 import HeroContainer from "./src/components/website/heroPage";
 import CoursesContainer from "./src/components/website/courses";
+import ContactUsContainer from "./src/components/website/contact-us";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Navigation />
         <HeroContainer />
         <CoursesContainer />
+        <ContactUsContainer/>
       </LinearGradient>
     </ScrollView>
   );

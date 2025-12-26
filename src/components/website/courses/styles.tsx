@@ -4,13 +4,18 @@ export const courseStyles = StyleSheet.create({
   mainContainer: {
     width: "100%",
     backgroundColor: "#080e19",
-    height: "100%",
+    height: "55%",
     marginTop: "-2%",
+  },
+    mainContainerMobile: {
+    width: "100%",
+    backgroundColor: "#080e19",
+    height: "79%",
   },
   textboxOne: {
     width: "50%",
     alignSelf: "center",
-    justifyContent: "center",
+    alignItems:"center",
     marginTop: 30,
   },
   title: {
@@ -20,10 +25,10 @@ export const courseStyles = StyleSheet.create({
     fontWeight: "500",
   },
   subtitle: {
-    width: "80%",
+    width: "90%",
     alignSelf: "center",
     justifyContent: "center",
-    marginTop: 20,
+    marginTop: 10,
   },
   subtext: {
     alignSelf: "center",
@@ -32,7 +37,7 @@ export const courseStyles = StyleSheet.create({
     fontSize: 40,
   },
   footerText: {
-    marginTop: 5,
+    marginTop: 10,
     alignSelf: "center",
     color: "#B1BABA",
     fontSize: 20,

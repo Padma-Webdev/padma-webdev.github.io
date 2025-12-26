@@ -57,7 +57,7 @@ export default function CoursesContainer() {
   };
 
   return (
-    <View style={courseStyles.mainContainer}>
+    <View style={isSmallScreen ? courseStyles.mainContainerMobile : courseStyles.mainContainer}>
       <View style={courseStyles.textboxOne}>
         <Text style={courseStyles.title}>WHY CHOOSE MEDTUTOR</Text>
       </View>
