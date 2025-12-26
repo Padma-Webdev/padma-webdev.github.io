@@ -46,9 +46,6 @@ export default function Navigation() {
             </TouchableOpacity>
           </View>
         )}
-        {/* <View>
-            <RegionSwitch/>
-        </View> */}
       </View>
     </View>
   );

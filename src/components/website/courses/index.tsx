@@ -3,13 +3,27 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { courseStyles } from "./styles";
 import { courseData, courseDataTwo } from "./array";
 import { Contact, NotebookTabsIcon, SquareUserRound } from "lucide-react";
+import useDimensions from "../common/dimensions";
 
 export default function CoursesContainer() {
+  const dimensions = useDimensions();
+  const screenWidth = dimensions.window.width;
+  const isSmallScreen = screenWidth < 720;
+
   const courseTile = (item: any, index: any) => {
     return (
-      <View style={courseStyles.courseTile} key={index.toString()}>
+      <View
+        style={
+          isSmallScreen
+            ? courseStyles.courseTileMobile
+            : courseStyles.courseTile
+        }
+        key={index.toString()}
+      >
         <TouchableOpacity style={courseStyles.tView}>
-          <NotebookTabsIcon style={courseStyles.icon} />
+          <NotebookTabsIcon
+            style={isSmallScreen ? courseStyles.iconMobile : courseStyles.iconOne}
+          />
           <Text style={courseStyles.courseTitle}>{item.title}</Text>
           <Text style={courseStyles.courseDesc}>{item.description}</Text>
         </TouchableOpacity>
@@ -19,9 +33,11 @@ export default function CoursesContainer() {
 
   const courseTileTwo = (item: any, index: any) => {
     return (
-      <View style={courseStyles.courseTile} key={index.toString()}>
+      <View style={ isSmallScreen
+            ? courseStyles.courseTileMobile
+            : courseStyles.courseTile} key={index.toString()}>
         <TouchableOpacity style={courseStyles.tView}>
-          <Contact style={courseStyles.icon} />
+          <Contact style={isSmallScreen ? courseStyles.iconMobile : courseStyles.icon}/>
           <Text style={courseStyles.courseTitle}>{item.title}</Text>
           <Text style={courseStyles.courseDesc}>{item.description}</Text>
         </TouchableOpacity>
@@ -54,17 +70,33 @@ export default function CoursesContainer() {
       </View>
       <View style={{ flexDirection: "column", width: "100%", marginTop: "2%" }}>
         <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-            alignSelf: "center",
-            width: "90%",
-          }}
+          style={
+            isSmallScreen
+              ? {
+                  flexDirection: "column",
+                  justifyContent: "space-evenly",
+                  alignSelf: "center",
+                  width: "90%",
+                }
+              : {
+                  flexDirection: "row",
+                  justifyContent: "space-evenly",
+                  alignSelf: "center",
+                  width: "90%",
+                }
+          }
         >
           {displayTileOne()}
         </View>
         <View
-          style={{
+          style={isSmallScreen
+              ? {
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignSelf: "center",
+            width: "90%",
+                }
+              :{
             flexDirection: "row",
             justifyContent: "space-evenly",
             alignSelf: "center",
