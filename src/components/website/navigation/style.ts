@@ -58,4 +58,19 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: "red",
   },
+
+  reigonalSwitchView: {
+    borderWidth: 1,
+    borderRadius: 10,
+    width: 100,
+    height: 25,
+    borderColor: "#c0cad4",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  switchButton: {
+    width: "49%",
+    borderRadius: 10,
+  },
+  buttonText: { color: "white", fontSize: 13, alignSelf: "center" },
 });
