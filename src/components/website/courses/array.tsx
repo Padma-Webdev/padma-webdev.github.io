@@ -1,4 +1,3 @@
-
 export const courseData = [
   {
     title: "UCAT",
@@ -17,7 +16,6 @@ export const courseData = [
   },
 ];
 
-
 export const courseDataTwo = [
   {
     title: "Proven Success Rate",
@@ -34,4 +32,23 @@ export const courseDataTwo = [
     description:
       "Book sessions at your convenience with 24/7 availability to fit your busy medical student schedule.",
   },
+];
+
+export const irishCourses = [
+  { title: "HPAT" },
+  { title: "Leaving Cert Grinds" },
+  { title: "Junior Cert Grinds" },
+  { title: "Application Packages" },
+  { title: "Free Resources" },
+  { title: "More" },
+];
+
+export const ukCourses = [
+  { title: "UCAT" },
+  { title: "Personal Statement" },
+  { title: "Interviews" },
+  { title: "Application Packages" },
+  { title: "A Level" },
+  { title: "Dentistry" },
+  { title: "Free Resources" },
 ];

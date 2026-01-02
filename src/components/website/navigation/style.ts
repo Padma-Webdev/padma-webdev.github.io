@@ -9,6 +9,14 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "flex-start",
   },
+  headerBackgroundMobile: {
+    backgroundColor: "#0d1623",
+    width: "100%",
+    height: "1.8%",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "flex-start",
+  },
   /** Header Logo and Text */
   headerLogo: {
     marginLeft: "10%",
@@ -32,9 +40,9 @@ export const styles = StyleSheet.create({
     flex: 0.1,
     flexDirection: "row",
     marginTop: 17,
-    marginLeft: "40%",
+    marginLeft: "80%",
     justifyContent: "flex-end",
-    width: "10%",
+    width: "12%",
   },
   /** Header Text Menu */
   headerContentSpace: {
@@ -44,9 +52,22 @@ export const styles = StyleSheet.create({
     marginLeft: "5%",
     justifyContent: "space-evenly",
   },
+  headerContentSpaceMobile: {
+    flex: 1,
+    flexDirection: "column",
+    marginTop: 17,
+    marginLeft: "5%",
+    justifyContent: "space-evenly",
+  },
+
   headerText: {
     color: "#bdc4cf",
     fontSize: 15,
+  },
+  headerTextMobile: {
+    color: "#bdc4cf",
+    fontSize: 18,
+    fontWeight: "bold",
   },
   /** Header Switch Area */
   switchView: {
@@ -66,7 +87,7 @@ export const styles = StyleSheet.create({
     height: 25,
     borderColor: "#c0cad4",
     flexDirection: "row",
-    padding : 1,
+    padding: 1,
     justifyContent: "space-between",
   },
   switchButton: {
@@ -79,4 +100,5 @@ export const styles = StyleSheet.create({
     backgroundColor: "#3A5EF2",
   },
   buttonText: { color: "white", fontSize: 13, alignSelf: "center" },
+  regswitchView: { alignSelf: "center", marginRight: "1%" },
 });

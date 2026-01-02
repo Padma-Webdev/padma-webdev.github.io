@@ -5,6 +5,7 @@ import ContactUsContainer from "./contact-us";
 import CoursesContainer from "./courses";
 import HeroContainer from "./heroPage";
 import NavigationTop from "./navigation/navBarTop";
+import Navigation from "./navigation";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         start={{ x: 0, y: 0 }}
         end={{ x: 0.5, y: 1 }}
       >
-        <NavigationTop />
+        <Navigation />
         <HeroContainer />
         <CoursesContainer />
         <ContactUsContainer/>

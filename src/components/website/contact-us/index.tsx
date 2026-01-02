@@ -1,12 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, Dimensions } from "react-native";
 import { courseStyles } from "../courses/styles";
 import { contactStyles } from "./styles";
-import useDimensions from "../common/dimensions";
 import { Mail, Phone } from "lucide-react";
 
 export default function ContactUsContainer() {
-  const dimensions = useDimensions();
-  const screenWidth = dimensions.window.width;
+  const screenWidth = Dimensions.get("window").width;
   const isSmallScreen = screenWidth < 740;
   return (
     <View

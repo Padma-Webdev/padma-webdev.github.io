@@ -1,13 +1,11 @@
 import React from "react";
-import { Button, Text, TouchableOpacity, View } from "react-native";
+import { Button, Dimensions, Text, TouchableOpacity, View } from "react-native";
 import CircleRoundedIcon from "@mui/icons-material/CircleRounded";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { heroStyles } from "./styles";
-import useDimensions from "../common/dimensions";
 
 export default function HeroContainer() {
-  const dimensions = useDimensions();
-  const screenWidth = dimensions.window.width;
+  const screenWidth = Dimensions.get("window").width;
   const isSmallScreen = screenWidth < 740;
 
   return (

@@ -7,7 +7,7 @@ export const courseStyles = StyleSheet.create({
     height: "55%",
     marginTop: "-2%",
   },
-    mainContainerMobile: {
+  mainContainerMobile: {
     width: "100%",
     backgroundColor: "#080e19",
     height: "72%",
@@ -15,7 +15,7 @@ export const courseStyles = StyleSheet.create({
   textboxOne: {
     width: "50%",
     alignSelf: "center",
-    alignItems:"center",
+    alignItems: "center",
     marginTop: 30,
   },
   title: {
@@ -135,5 +135,31 @@ export const courseStyles = StyleSheet.create({
     marginTop: "5%",
     lineHeight: 30,
     marginLeft: "5%",
+  },
+  mainView: { flexDirection: "column", width: "100%", marginTop: "2%" },
+  smallScreentileone: {
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignSelf: "center",
+    width: "90%",
+  },
+  webscreenone: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignSelf: "center",
+    width: "90%",
+  },
+  smallScreentiletwo: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignSelf: "center",
+    width: "90%",
+  },
+  webscreentwo: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignSelf: "center",
+    width: "90%",
+    marginTop: "0.5%",
   },
 });
