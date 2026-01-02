@@ -42,7 +42,7 @@ export default function NavigationSide() {
     return (
       <View style={styles.headerContentSpaceMobile} key={index.toString()}>
         <TouchableOpacity>
-          <Text style={styles.headerText}>{item.title}</Text>
+          <Text style={styles.headerTextMobile}>{item.title}</Text>
         </TouchableOpacity>
       </View>
     );
