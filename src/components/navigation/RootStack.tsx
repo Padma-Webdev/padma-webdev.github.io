@@ -7,16 +7,11 @@ import CoursesContainer from "../website/courses";
 import HeroContainer from "../website/heroPage";
 import Navigation from "../website/navigation";
 import Home from "../website";
-import * as Linking from "expo-linking";
 import { RoutePath } from "./routes";
 
 const Stack = createNativeStackNavigator();
 
 const RootStack = () => {
-  let prefix = Linking.createURL("/");
-  const linking = {
-    prefixes: [prefix],
-  };
   return (
     <NavigationContainer>
       <Stack.Navigator

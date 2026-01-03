@@ -20,7 +20,13 @@ export default function NavigationSide() {
     setRegion(false);
   };
 
+  const handleOnPress =()=>{
+    navigation.navigate(RoutePath.HPAT as never)
+    setModalVisible(false)
+  }
+
   useEffect(() => {}, [region]);
+  useEffect(() => {}, [modalVisible]);
 
   const regionalSwitch = () => {
     return (
@@ -45,7 +51,7 @@ export default function NavigationSide() {
     return (
       <View style={styles.headerContentSpaceMobile} key={index.toString()}>
         <TouchableOpacity
-          onPress={() => (navigation.navigate(RoutePath.HPAT as never))}
+          onPress={() => handleOnPress()}
         >
           <Text style={styles.headerTextMobile}>{item.title}</Text>
         </TouchableOpacity>
@@ -121,7 +127,7 @@ export default function NavigationSide() {
                   }}
                 >
                   <CloseIcon
-                    sx={{ color: "#f8fefe", width: "80%", height: "80%" }}
+                    sx={{ color: "#f8fefe", width: "70%", height: "80%" }}
                   />
                 </TouchableOpacity>
               </View>

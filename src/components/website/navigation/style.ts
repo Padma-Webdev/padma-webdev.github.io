@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   headerBackground: {
     backgroundColor: "#0d1623",
     width: "100%",
-    height: "120%",
+    height: 50,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "flex-start",
