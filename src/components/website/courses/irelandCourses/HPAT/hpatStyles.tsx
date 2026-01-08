@@ -8,7 +8,14 @@ export const hpatStyles = StyleSheet.create({
     fontWeight: "600",
     marginBottom: 10,
   },
-  hpatDesc: {
+    hpatDesc: {
+    fontSize: 18,
+    color: "#f8fefe",
+    fontWeight: "400",
+    marginBottom: 10,
+    marginLeft: 25,
+  },
+  hpatDesc2: {
     fontSize: 18,
     color: "#f8fefe",
     fontWeight: "400",

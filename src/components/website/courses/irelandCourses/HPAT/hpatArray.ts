@@ -26,7 +26,7 @@ export const HPAT_DATES = [
   {
     title: "HPAT Dates, Fees & Results: Example HPAT Cycle (2026)",
     description:
-      "Key Dates\n\n\u2022 Test window: 13–16 February\n\u2022 Registration opens: November\n\u2022 Standard registration deadline: mid-January\n\u2022 Late registration deadline: late January\n\nHPAT Fees\n\n\u2022 Standard HPAT fee: €164\n\u2022 Late registration fee: €75\n\u2022 Exceptional late fee: €110\n\nResults Release\n\nHPAT results are released in April and June, depending on the applicant category. Always check official HPAT announcements for confirmed dates and deadlines.",
+      "Key Dates\n\n\u2022 Test window: 13–16 February\n\u2022 Registration opens: November\n\u2022 Standard registration deadline: mid-January\n\u2022 Late registration deadline: late January\n\nHPAT Fees\n\n\u2022 Standard HPAT fee: €164\n\u2022 Late registration fee: €75\n\u2022 Exceptional late fee: €110\n\nResults Release\n\u2022HPAT results are released in April and June, depending on the applicant category. Always check official HPAT announcements for confirmed dates and deadlines.",
   },
   {
     title: "Universities That Require HPAT in Ireland",

@@ -25,8 +25,6 @@ export default function NavigationTop() {
     showMoreRes(false);
   };
 
-  useEffect(() => {}, [region]);
-
   const handleHPAT = () => {
     showHpat(true);
     showHpatTutor(false);
@@ -35,7 +33,17 @@ export default function NavigationTop() {
     showMoreRes(false);
   };
 
+  const handleHPATTutoring = () => {
+    showHpat(false);
+    showHpatTutor(true);
+    showLeaveCert(false);
+    showfreeRes(false);
+    showMoreRes(false);
+  };
+
   useEffect(() => {}, [hpat]);
+  useEffect(() => {}, [hpatTutor]);
+  useEffect(() => {}, [region]);
 
   const regionalSwitch = () => {
     return (
@@ -73,7 +81,7 @@ export default function NavigationTop() {
             <Text style={styles.headerText}>HPAT</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleHPATTutoring()}>
           <View>
             <Text style={styles.headerText}>HPAT Tutoring</Text>
           </View>
@@ -122,21 +130,7 @@ export default function NavigationTop() {
         <View style={styles.regswitchView}>{regionalSwitch()}</View>
       </View>
       {hpat && (
-        <View
-          style={{
-            flex: 0.23,
-            flexDirection: "column",
-            width: 220,
-            height: "100%",
-            marginLeft: "30%",
-            justifyContent: "space-evenly",
-            backgroundColor: "#112230",
-            borderRadius: 10,
-            borderColor: "#23CFBB",
-            borderWidth: 1,
-            padding: 5,
-          }}
-        >
+        <View style={styles.hpatDropDownView}>
           <TouchableOpacity
             onPress={() => navigation.navigate(RoutePath.ABOUTHPAT as never)}
           >
@@ -144,16 +138,49 @@ export default function NavigationTop() {
               <Text style={styles.headerText}>About HPAT</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate(RoutePath.HPATDATES as never)}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(RoutePath.HPATDATES as never)}
+          >
             <View style={{ marginTop: 3 }}>
               <Text style={styles.headerText}>HPAT Dates, Fees & Results</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate(RoutePath.HPATCHANGES as never)}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(RoutePath.HPATCHANGES as never)}
+          >
             <View style={{ marginTop: 3, marginBottom: 4 }}>
-              <Text style={styles.headerText}>HPAT Changes from 2027 and FAQs</Text>
+              <Text style={styles.headerText}>
+                HPAT Changes from 2027 and FAQs
+              </Text>
             </View>
           </TouchableOpacity>
+        </View>
+      )}
+      {hpatTutor && (
+        <View style={styles.hpatTutoringDropDownView}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(RoutePath.GROUPPREP as never)}
+          >
+            <View style={{ marginTop: 2, marginBottom: 2 }}>
+              <Text style={styles.headerText}>
+                1:1 & Small Group HPAT Preparation(Online)
+              </Text>
+            </View>
+          </TouchableOpacity>
+          {/* <TouchableOpacity
+            onPress={() => navigation.navigate(RoutePath.HPATDATES as never)}
+          >
+            <View style={{ marginTop: 3 }}>
+              <Text style={styles.headerText}>HPAT Dates, Fees & Results</Text>
+            </View>
+          </TouchableOpacity> */}
+          {/* <TouchableOpacity
+            onPress={() => navigation.navigate(RoutePath.HPATCHANGES as never)}
+          >
+            <View style={{ marginTop: 3, marginBottom: 4 }}>
+              <Text style={styles.headerText}>Why MedTutor</Text>
+            </View>
+          </TouchableOpacity> */}
         </View>
       )}
     </View>
