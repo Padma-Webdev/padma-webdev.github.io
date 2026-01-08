@@ -48,10 +48,10 @@ export default function HeroContainer() {
             isSmallScreen ? heroStyles.buttonMobile :heroStyles.button,
           ]}
         >
-          <Text style={heroStyles.buttonText1}>Start Learning Today</Text>
+          <Text style={heroStyles.buttonText1}>About HPAT</Text>
           <NavigateNextIcon width={4} height={4} sx={{ color: "#f8fefe" }} />
         </TouchableOpacity>
-
+{/* 
         <TouchableOpacity
           style={[
             {
@@ -62,8 +62,8 @@ export default function HeroContainer() {
             isSmallScreen ? heroStyles.buttonMobile :heroStyles.button,
           ]}
         >
-          <Text style={heroStyles.buttonText2}>Browse Courses </Text>
-        </TouchableOpacity>
+          <Text style={heroStyles.buttonText2}>ABOUT UCAT </Text>
+        </TouchableOpacity> */}
       </View>
     </View>
   );

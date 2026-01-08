@@ -34,21 +34,21 @@ export const courseDataTwo = [
   },
 ];
 
-export const irishCourses = [
-  { title: "HPAT" },
-  { title: "Leaving Cert Grinds" },
-  { title: "Junior Cert Grinds" },
-  { title: "Application Packages" },
-  { title: "Free Resources" },
-  { title: "More" },
-];
+
+// export const irishCourses = [
+//   { title: "HPAT", },
+//   { title: "HPAT Tutoring" },
+//   { title: "Leaving Cert Grinds" },
+//   { title: "Free Resources" },
+//   { title: "More" },
+// ];
 
 export const ukCourses = [
+  { title: "UCAS" }, //Needs a drop down of tutoring
   { title: "UCAT" },
+  { title: "UCAT Tutoring" },
   { title: "Personal Statement" },
   { title: "Interviews" },
-  { title: "Application Packages" },
-  { title: "A Level" },
-  { title: "Dentistry" },
+  { title: "Work Experience" },
   { title: "Free Resources" },
 ];

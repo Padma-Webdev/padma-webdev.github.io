@@ -52,6 +52,12 @@ export const styles = StyleSheet.create({
     marginLeft: "5%",
     justifyContent: "space-evenly",
   },
+  headerSpace: {
+    flex: 1,
+    flexDirection: "row",
+    marginLeft: "5%",
+    justifyContent: "space-evenly",
+  },
   headerContentSpaceMobile: {
     flex: 1,
     flexDirection: "column",
@@ -63,6 +69,8 @@ export const styles = StyleSheet.create({
   headerText: {
     color: "#bdc4cf",
     fontSize: 15,
+    marginLeft: 10,
+    fontFamily: "Inter",
   },
   headerTextMobile: {
     color: "#bdc4cf",

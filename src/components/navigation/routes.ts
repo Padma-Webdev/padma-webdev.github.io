@@ -1,5 +1,6 @@
 export enum RoutePath{
     Home='MedTutor',
-    HPAT="HPAT",
-
+    ABOUTHPAT="ABOUT-HPAT",
+    HPATDATES="HPAT-DATES",
+        HPATCHANGES="HPAT-CHANGES",
 }
