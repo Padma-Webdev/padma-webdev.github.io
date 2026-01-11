@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "WTutor",
+    "name": "MedTutor",
     "slug": "MedTutor",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,7 +24,8 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "publicPath": "/MedTutor/"
     },
     "plugins": [
       "expo-font"

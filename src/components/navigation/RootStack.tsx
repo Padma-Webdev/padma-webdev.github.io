@@ -12,7 +12,6 @@ import HPATDatesContainer from "../website/courses/irelandCourses/HPAT/hpatDates
 import HPATChangesContainer from "../website/courses/irelandCourses/HPAT/hpatChanges";
 import GroupPrepContainer from "../website/courses/irelandCourses/HPAT_Tutoring/groupPrep";
 import DayPrepContainer from "../website/courses/irelandCourses/HPAT_Tutoring/dayPrep";
-import JuniorCertContainer from "../website/courses/irelandCourses/JuniorCert/leavingCert";
 import LeavingCertContainer from "../website/courses/irelandCourses/JuniorCert/leavingCert";
 import JuniorCertificateContainer from "../website/courses/irelandCourses/JuniorCert/juniorCert";
 
@@ -20,7 +19,9 @@ const Stack = createNativeStackNavigator();
 
 const RootStack = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={{
+    prefixes: ['/MedTutor'],
+  }}>
       <Stack.Navigator
         initialRouteName={RoutePath.Home}
         screenOptions={{
