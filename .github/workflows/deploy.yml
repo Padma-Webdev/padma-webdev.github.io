@@ -26,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node 20
+      # 2️⃣ Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -36,29 +36,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Install Expo CLI globally
-      - name: Install Expo CLI
-        run: npm install -g expo
-
-      # 5️⃣ Build Expo Web
+      # 4️⃣ Build Expo Web in root dist/
       - name: Build Expo Web
-        run: npx expo export --platform web
+        run: |
+          rm -rf dist
+          npx expo export --platform web --output-dir dist
 
-      # 6️⃣ Verify build output
+      # 5️⃣ Verify dist/ folder exists
       - name: Verify build output
         run: ls -la dist
 
-      # 7️⃣ Configure GitHub Pages
+      # 6️⃣ Setup GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 8️⃣ Upload Pages artifact
+      # 7️⃣ Upload dist/ folder as Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
-      # 9️⃣ Deploy to GitHub Pages
+      # 8️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
