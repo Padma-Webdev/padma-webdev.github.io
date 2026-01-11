@@ -48,7 +48,7 @@ export default function GroupPrepContainer() {
       <View style={personalStyles.header}>
         <View style={personalStyles.headerOpactiy} />
         <Text style={groupStyles.mainText}>
-          HPAT Tutoring Ireland – 1:1 & Small Group HPAT Preparation (Online)
+          HPAT 1:1 & Small Group HPAT Preparation
         </Text>
         <Text style={personalStyles.TitleText}>
           MedTutor offers expert-led HPAT tutoring designed to maximise

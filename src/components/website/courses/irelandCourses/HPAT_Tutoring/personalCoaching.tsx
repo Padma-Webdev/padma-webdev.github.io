@@ -7,9 +7,7 @@ export const PersonalisedTutoring = () => {
       <Text style={groupStyles.personalisedText}>
         1:1 HPAT Tutoring (Personalised One-to-One Coaching)
       </Text>
-      <Text style={groupStyles.groupHeader}>
-        Premium HPAT Coaching for Ambitious Students
-      </Text>
+
       <Text style={groupStyles.groupBody}>
         Our 1:1 HPAT tutoring is designed for students who want the most
         tailored support. Each session is customised to your goals, strengths,

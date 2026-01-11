@@ -115,9 +115,9 @@ export const personalStyles = StyleSheet.create({
     backgroundColor: "black",
     opacity: 0.3,
   },
-  findDetails:{
-                  fontSize: 20,
-                  color: "#f8fefe",
-                  fontWeight: "400",
-                },
+  findDetails: {
+    fontSize: 20,
+    color: "#f8fefe",
+    fontWeight: "400",
+  },
 });
