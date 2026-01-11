@@ -40,9 +40,10 @@ jobs:
       - name: Install Expo CLI
         run: npm install -g expo
 
-      # 5️⃣ Build Expo Web
+            # 5️⃣ Build Expo Web (local CLI compatible)
       - name: Build Expo Web
-        run: expo build:web
+        run: npx expo export --platform web
+
 
       # 6️⃣ Verify build output
       - name: Verify build output
