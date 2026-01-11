@@ -22,11 +22,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # 1️⃣ Checkout repository
+      # 1️⃣ Checkout repo
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
+      # 2️⃣ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -36,25 +36,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build Expo Web
+      # 4️⃣ Build Expo Web in dist/
       - name: Build Expo Web
         run: |
           rm -rf dist
           npx expo export --platform web --output-dir dist
 
-      # 5️⃣ SPA fix: copy index.html to 404.html
-      - name: SPA 404 fallback
-        run: cp dist/index.html dist/404.html
+      # 5️⃣ Fix asset paths for GitHub Pages
+      - name: Fix Expo asset paths
+        run: |
+          # On Linux/macOS
+          sed -i '' 's|src="/_expo/|src="/MedTutor/_expo/|g' dist/index.html
+          sed -i '' 's|href="/_expo/|href="/MedTutor/_expo/|g' dist/index.html
+          cp dist/index.html dist/404.html
 
-      # 6️⃣ Verify dist/ folder exists
-      - name: Verify build output
+      # 6️⃣ Verify build output
+      - name: Verify dist/ folder
         run: ls -la dist
 
       # 7️⃣ Setup GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 8️⃣ Upload dist/ folder as artifact
+      # 8️⃣ Upload dist/ folder
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
