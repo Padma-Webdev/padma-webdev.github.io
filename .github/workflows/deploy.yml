@@ -46,7 +46,7 @@ jobs:
 
       # 6. Verify build output
       - name: Verify build output
-        run: ls -la dist
+        run: ls -la web-build
 
       # 7. Configure GitHub Pages
       - name: Setup Pages
