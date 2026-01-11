@@ -24,11 +24,14 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png",
-      "publicPath": "/MedTutor/"
+      "web": {
+        "favicon": "./assets/favicon.png",
+        "publicPath": "/MedTutor/",
+        "build": {
+          "redirect": true
+        }
+      }
     },
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"]
   }
 }
