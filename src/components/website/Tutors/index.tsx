@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Dimensions, Image } from "react-native";
 import { courseStyles } from "../courses/styles";
 import { useNavigation } from "@react-navigation/native";
+import AbbyImage from '../../assets/images/ABBY.jpeg'
 
 export default function TutorsContainer() {
   const screenWidth = Dimensions.get("window").width;
@@ -22,7 +23,6 @@ export default function TutorsContainer() {
             : {
                 flexDirection: "row",
                 justifyContent: "space-between",
-                backgroundColor:"red",
                 width: "100%",
                 // marginTop: 10,
               }
@@ -103,15 +103,17 @@ export default function TutorsContainer() {
                       height: 450,
                       borderRadius: 5,
                       marginBottom: 20,
+                      resizeMode:"contain"
                     }
                   : {
                       width: screenWidth * 0.195,
                       height: 450,
                       borderRadius: 5,
                       marginBottom: 20,
+                      resizeMode:"contain"
                     }
               }
-              source={require("../../images/ABBY.jpeg")}
+              source={AbbyImage}
             />
           </View>
           <Text
