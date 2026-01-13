@@ -6,6 +6,8 @@ import {
   Dimensions,
   ImageBackground,
   TouchableOpacity,
+  ScrollView,
+  Linking,
 } from "react-native";
 import { hpatStyles } from "../HPAT/hpatStyles";
 import { groupStyles } from "./groupPrepStyles";
@@ -19,6 +21,7 @@ import { personalStyles } from "./personalStyles";
 
 export default function GroupPrepContainer() {
   const screenWidth = Dimensions.get("window").width;
+  const screenHeight = Dimensions.get("window").height;
   const isSmallScreen = screenWidth < 740;
   const image = {
     uri: "https://images.pexels.com/photos/5211478/pexels-photo-5211478.jpeg?_gl=1*8hmqoq*_ga*MjEyMzczNTM1Ny4xNzY2MDgyMzEw*_ga_8JE65Q40S6*czE3NjgxNDYwMjQkbzIkZzEkdDE3NjgxNDc0MDckajM1JGwwJGgw",
@@ -45,44 +48,120 @@ export default function GroupPrepContainer() {
 
   const Header = () => {
     return (
-      <View style={personalStyles.header}>
+      <View
+        style={
+          isSmallScreen
+            ? personalStyles.headerSmallScreen
+            : personalStyles.header
+        }
+      >
         <View style={personalStyles.headerOpactiy} />
         <Text style={groupStyles.mainText}>
           HPAT 1:1 & Small Group HPAT Preparation
         </Text>
-        <Text style={personalStyles.TitleText}>
+        <Text
+          style={
+            isSmallScreen
+              ? personalStyles.TitleTextSmallScreen
+              : personalStyles.TitleText
+          }
+        >
           MedTutor offers expert-led HPAT tutoring designed to maximise
           performance, confidence, and exam-day strategy. Choose 1:1 tutoring
           for fully personalised coaching or Small Group tutoring for structured
           learning with peer motivation.
         </Text>
-        <Text style={groupStyles.Bookings}>
-          For Bookings: contactus@medtutor.ie
-        </Text>
+        <TouchableOpacity
+          style={
+            isSmallScreen
+              ? {
+                  backgroundColor: "#148190",
+                  borderRadius: 3,
+                  padding: 5,
+                  width: "95%",
+                  alignSelf: "center",
+                }
+              : {
+                  backgroundColor: "#2563EB",
+                  borderRadius: 5,
+                  padding: 5,
+                  width: 400,
+                  alignSelf: "center",
+                  alignContent: "center",
+                }
+          }
+          onPress={() => {
+            Linking.openURL(
+              "mailto: contactus@medtutor.ie?subject=HPAT Tutoring &body=body"
+            );
+          }}
+        >
+          <Text
+            style={
+              isSmallScreen
+                ? groupStyles.BookingsSmallScreen
+                : groupStyles.Bookings
+            }
+          >
+            For Bookings: contactus@medtutor.ie
+          </Text>
+        </TouchableOpacity>
         <View style={personalStyles.findView}>
-          <View style={personalStyles.underLine} />
+          {!isSmallScreen && <View style={personalStyles.underLine} />}
           <View>
             <Text
-              style={personalStyles.findDetails}
+              style={
+                isSmallScreen
+                  ? personalStyles.findDetailsSmallScreen
+                  : personalStyles.findDetails
+              }
             >
               FIND MORE DETAILS BELOW
             </Text>
           </View>
-          <View style={personalStyles.underLine} />
+          {!isSmallScreen && <View style={personalStyles.underLine} />}
         </View>
-        <View style={personalStyles.courseButtonView}>
+        <View
+          style={
+            isSmallScreen
+              ? personalStyles.courseButtonViewSmallScreen
+              : personalStyles.courseButtonView
+          }
+        >
           <TouchableOpacity
-            style={personalStyles.personalTutor}
+            style={
+              isSmallScreen
+                ? personalStyles.personalTutorSmallScreen
+                : personalStyles.personalTutor
+            }
             onPress={switchToPersonal}
           >
-            <Text style={personalStyles.buttonText}>1:1 HPAT Tutoring</Text>
+            <Text
+              style={
+                isSmallScreen
+                  ? personalStyles.buttonTextSmallScreen
+                  : personalStyles.buttonText
+              }
+            >
+              1:1 HPAT Tutoring
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={personalStyles.personalTutor}
+            style={
+              isSmallScreen
+                ? personalStyles.personalTutorSmallScreen
+                : personalStyles.personalTutor
+            }
             onPress={switchToGroup}
           >
-            <Text style={personalStyles.button2Text}>
-              Small Group HPAT Tutoring
+            <Text
+              style={
+                isSmallScreen
+                  ? personalStyles.button2TextSmallScreen
+                  : personalStyles.button2Text
+              }
+            >
+              Small Group Tutoring
             </Text>
           </TouchableOpacity>
         </View>
@@ -92,24 +171,16 @@ export default function GroupPrepContainer() {
 
   const CourseDetails = () => {
     return (
-      <View
-        style={personalStyles.courseView}
-      >
-        <View
-          style={personalStyles.headerOpactiy}
-        />
+      <View style={isSmallScreen?personalStyles.courseViewSmallScreen:personalStyles.courseView}>
+        <View style={personalStyles.headerOpactiy} />
         {!groupTutor ? PersonalisedTutoring() : SmallGroupTutoring()}
       </View>
     );
   };
   const FAQs = () => {
     return (
-      <View
-        style={personalStyles.courseView}
-      >
-        <View
-          style={personalStyles.headerOpactiy}
-        />
+      <View style={personalStyles.courseView}>
+        <View style={personalStyles.headerOpactiy} />
         {!groupTutor ? PersonalisedTutoringFAQ() : SmallGroupTutoringFAQs()}
       </View>
     );
@@ -117,47 +188,60 @@ export default function GroupPrepContainer() {
 
   const DetailsButton = () => {
     return (
-      <View
-        style={personalStyles.detailsView}
-      >
+      <View style={isSmallScreen?personalStyles.detailsViewSmallScreen:personalStyles.detailsView}>
         <TouchableOpacity
           style={personalStyles.detailsButton1}
           onPress={switchToCourse}
         >
-          <Text
-            style={personalStyles.buttonCourseText}
-          >
-            Course Content
-          </Text>
+          <Text style={personalStyles.buttonCourseText}>Course Content</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={personalStyles.detailsButton1}
           onPress={switchToFAQs}
         >
-          <Text
-            style={personalStyles.buttonCourseText2}
-          >
-            FAQs
-          </Text>
+          <Text style={personalStyles.buttonCourseText2}>FAQs</Text>
         </TouchableOpacity>
       </View>
     );
   };
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }}>
-        <ImageBackground source={image} style={{ flex: 1 }}>
-          <View
-            style={personalStyles.mainOpacity}
-          />
-          <View style={hpatStyles.backButton}>
-            <BackButton />
-          </View>
-          {Header()}
-          {DetailsButton()}
-          {showFAQs ? FAQs() : CourseDetails()}
-        </ImageBackground>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <ScrollView
+      style={{
+        flex: 1,
+        width: screenWidth,
+        height: screenHeight * 1.25,
+        backgroundColor: "#112230",
+      }}
+    >
+      <SafeAreaProvider>
+        <SafeAreaView>
+          <ImageBackground
+            source={image}
+            style={{ flex: 1, width: screenWidth, height: screenHeight * 1.25 }}
+          >
+            <View
+              style={{
+                borderRadius: 15,
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: "#080e19",
+                opacity: 0.3,
+                width: screenWidth,
+                height: screenHeight * 1.25,
+              }}
+            />
+            <View style={hpatStyles.backButton}>
+              <BackButton />
+            </View>
+            {Header()}
+            {DetailsButton()}
+            {showFAQs ? FAQs() : CourseDetails()}
+          </ImageBackground>
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </ScrollView>
   );
 }

@@ -24,10 +24,10 @@ export const hpatStyles = StyleSheet.create({
   },
   backButton: {
     marginLeft: 40,
-    height: "12%",
+    height: "10%",
     justifyContent: "flex-start",
     flexDirection: "row",
-    width: "30%",
+    width: "5%",
   },
   hpatDisplay: {
     width: "75%",

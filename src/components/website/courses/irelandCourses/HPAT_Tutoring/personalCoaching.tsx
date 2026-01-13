@@ -1,11 +1,16 @@
-import { View, Text } from "react-native";
+import { View, Text, Dimensions } from "react-native";
 import { groupStyles } from "./groupPrepStyles";
 
 export const PersonalisedTutoring = () => {
+    const screenWidth = Dimensions.get("window").width;
+    const screenHeight = Dimensions.get("window").height;
+    const isSmallScreen = screenWidth < 740;
+  
   return (
-    <View style={{ padding: 10 }}>
+    <View style={{ padding: 5 }}>
       <Text style={groupStyles.personalisedText}>
-        1:1 HPAT Tutoring (Personalised One-to-One Coaching)
+        1:1 HPAT Tutoring
+         {/* (Personalised One-to-One Coaching) */}
       </Text>
 
       <Text style={groupStyles.groupBody}>

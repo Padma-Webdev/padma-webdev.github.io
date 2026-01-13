@@ -7,6 +7,7 @@ export const groupStyles = StyleSheet.create({
     fontWeight: "600",
     marginBottom: 15,
     alignSelf: "center",
+    marginLeft:15,
   },
   personalisedText: {
     fontSize: 25,
@@ -35,7 +36,7 @@ export const groupStyles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: 45,
   },
-    groupBoldCourse: {
+  groupBoldCourse: {
     fontSize: 15,
     fontWeight: "bold",
     color: "#f8fefe",
@@ -91,9 +92,15 @@ export const groupStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     color: "#f8fefe",
-    marginBottom: 2,
-    marginLeft: 40,
-    alignSelf:"center",
+    marginBottom: 5,
+    alignSelf: "center",
+  },
+  BookingsSmallScreen: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#f8fefe",
+    marginBottom: 5,
+    alignSelf: "center",
   },
   faqAnswers: {
     fontSize: 15,
