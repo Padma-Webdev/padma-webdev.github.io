@@ -9,16 +9,16 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function NavigationSide() {
   const navigation = useNavigation();
-  const [region, setRegion] = useState(true);
+  // const [region, setRegion] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
   const show = () => setModalVisible(true);
   const close = () => setModalVisible(false);
-  const regionSwitchROI = () => {
-    setRegion(true);
-  };
-  const regionSwitchUK = () => {
-    setRegion(false);
-  };
+  // const regionSwitchROI = () => {
+  //   setRegion(true);
+  // };
+  // const regionSwitchUK = () => {
+  //   setRegion(false);
+  // };
 
   const [hpat, showHpat] = useState(false);
     const [hpatTutor, showHpatTutor] = useState(false);
@@ -52,34 +52,33 @@ export default function NavigationSide() {
   
     useEffect(() => {}, [hpat]);
     useEffect(() => {}, [hpatTutor]);
-    useEffect(() => {}, [region]);
+    // useEffect(() => {}, [region]);
 
   const handleOnPress =()=>{
     // navigation.navigate(RoutePath.HPAT as never)
     setModalVisible(false)
   }
 
-  useEffect(() => {}, [region]);
   useEffect(() => {}, [modalVisible]);
 
-  const regionalSwitch = () => {
-    return (
-      <View style={styles.reigonalSwitchView}>
-        <TouchableOpacity
-          style={region ? styles.activeRegion : styles.switchButton}
-          onPress={regionSwitchROI}
-        >
-          <Text style={styles.buttonText}>🇮🇪 IE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={!region ? styles.activeRegion : styles.switchButton}
-          onPress={regionSwitchUK}
-        >
-          <Text style={styles.buttonText}>🇬🇧 UK</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  };
+  // const regionalSwitch = () => {
+  //   return (
+  //     <View style={styles.reigonalSwitchView}>
+  //       <TouchableOpacity
+  //         style={region ? styles.activeRegion : styles.switchButton}
+  //         onPress={regionSwitchROI}
+  //       >
+  //         <Text style={styles.buttonText}>🇮🇪 IE</Text>
+  //       </TouchableOpacity>
+  //       <TouchableOpacity
+  //         style={!region ? styles.activeRegion : styles.switchButton}
+  //         onPress={regionSwitchUK}
+  //       >
+  //         <Text style={styles.buttonText}>🇬🇧 UK</Text>
+  //       </TouchableOpacity>
+  //     </View>
+  //   );
+  // };
 
   const courses = (item: any, index: any) => {
     return (
