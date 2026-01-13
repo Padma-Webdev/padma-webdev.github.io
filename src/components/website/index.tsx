@@ -5,6 +5,7 @@ import ContactUsContainer from "./contact-us";
 import CoursesContainer from "./courses";
 import HeroContainer from "./heroPage";
 import Navigation from "./navigation";
+import TutorsContainer from "./Tutors";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Navigation />
         <HeroContainer />
         <CoursesContainer />
+        <TutorsContainer/>
         <ContactUsContainer/>
       </LinearGradient>
     </ScrollView>
