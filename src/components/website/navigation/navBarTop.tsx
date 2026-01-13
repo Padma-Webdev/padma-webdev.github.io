@@ -41,7 +41,7 @@ export default function NavigationTop() {
     showMoreRes(false);
   };
 
-    const handleleavingCert = () => {
+  const handleleavingCert = () => {
     showHpat(false);
     showHpatTutor(false);
     showLeaveCert(true);
@@ -127,13 +127,16 @@ export default function NavigationTop() {
   return (
     <View>
       <View style={styles.headerBackground}>
-        <View style={styles.logoSpace}>
+        <TouchableOpacity
+          style={styles.logoSpace}
+          onPress={() => navigation.navigate(RoutePath.Home as never)}
+        >
           <Image
             source={require("../../images/logo.png")}
             style={styles.headerLogo}
           />
           <Text style={styles.headerLogoText}>MedTutor</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.headerContentSpace}> {displayROICourses()}</View>
         {/* <View style={styles.regswitchView}>{regionalSwitch()}</View> */}
       </View>
@@ -192,27 +195,21 @@ export default function NavigationTop() {
             onPress={() => navigation.navigate(RoutePath.LEAVINGCERT as never)}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
-              <Text style={styles.headerText}>
-                Leaving Certificate
-              </Text>
+              <Text style={styles.headerText}>Leaving Certificate</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate(RoutePath.JUNIORCERT as never)}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
-              <Text style={styles.headerText}>
-                Junior Certificate
-              </Text>
+              <Text style={styles.headerText}>Junior Certificate</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate(RoutePath.WEEKPREP as never)}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
-              <Text style={styles.headerText}>
-                Student Packages
-              </Text>
+              <Text style={styles.headerText}>Student Packages</Text>
             </View>
           </TouchableOpacity>
         </View>

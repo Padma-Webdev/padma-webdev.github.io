@@ -5,24 +5,37 @@ import {
   Text,
   Dimensions,
   ScrollView,
+  ImageBackground
 } from "react-native";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { HPAT_DATES } from "./hpatArray";
 import { hpatStyles } from "./hpatStyles";
 
 export default function HPATDateContainer() {
   const screenWidth = Dimensions.get("window").width;
   const isSmallScreen = screenWidth < 740;
+      const image = {
+    uri: "https://images.pexels.com/photos/33904722/pexels-photo-33904722.jpeg?_gl=1*16pmvfx*_ga*MjEyMzczNTM1Ny4xNzY2MDgyMzEw*_ga_8JE65Q40S6*czE3NjgzMjgxMjIkbzYkZzEkdDE3NjgzMjkxMDckajM0JGwwJGgw"
+  };
 
   const Array = (item: any, index: any) => {
     return (
       <View key={index.toString()}>
-        <View>
+        <View style={{
+            alignSelf: "center",
+            width: "100%",
+            marginBottom: 10,
+            borderRadius: 5,
+            borderWidth: 3,
+            padding: 2,
+            borderColor: "#23CFBB",
+          }}>
           <Text
             style={hpatStyles.hpatTitle}
           >
             {item.title}
           </Text>
-          <Text style={hpatStyles.hpatDesc}>
+          <Text style={hpatStyles.hpatDescDates}>
             {item.description}
           </Text>
         </View>
@@ -36,6 +49,25 @@ export default function HPATDateContainer() {
   };
   return (
     <ScrollView style={hpatStyles.mainScroll}>
+      <SafeAreaProvider>
+            <SafeAreaView>
+                      <ImageBackground
+                        source={image}
+                        style={{
+                          flex: 1,
+                        }}
+                      >
+                        <View
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: "#080e19",
+                    opacity: 0.5,
+                  }}
+                />
       <View
         style={hpatStyles.backButton}
       >
@@ -43,10 +75,13 @@ export default function HPATDateContainer() {
       </View>
 
       <View
-        style={hpatStyles.hpatDisplay}
+        style={isSmallScreen?hpatStyles.hpatDisplayMobile:hpatStyles.hpatDisplay}
       >
         {displayHPAT()}
       </View>
+      </ImageBackground>
+                    </SafeAreaView>
+                  </SafeAreaProvider>
     </ScrollView>
   );
 }

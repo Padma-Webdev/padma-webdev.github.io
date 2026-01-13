@@ -7,6 +7,8 @@ export const hpatStyles = StyleSheet.create({
     color: "#f8fefe",
     fontWeight: "600",
     marginBottom: 10,
+    padding:10,
+    alignSelf:"center"
   },
     hpatDesc: {
     fontSize: 18,
@@ -14,6 +16,14 @@ export const hpatStyles = StyleSheet.create({
     fontWeight: "400",
     marginBottom: 10,
     marginLeft: 25,
+  },
+      hpatDescDates: {
+    fontSize: 18,
+    color: "#f8fefe",
+    fontWeight: "400",
+    marginBottom: 10,
+    marginLeft: 25,
+    alignSelf:"center"
   },
   hpatDesc2: {
     fontSize: 18,
@@ -32,7 +42,13 @@ export const hpatStyles = StyleSheet.create({
   hpatDisplay: {
     width: "75%",
     height: "80%",
-    alignItems: "flex-start",
+    alignItems: "center",
+    alignSelf: "center",
+  },
+    hpatDisplayMobile: {
+    width: "95%",
+    height: "80%",
+    alignItems: "center",
     alignSelf: "center",
   },
 });

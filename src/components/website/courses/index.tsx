@@ -177,29 +177,6 @@ export default function CoursesContainer() {
     );
   };
 
-  // const courseTileTwo = (item: any, index: any) => {
-  //   return (
-  //     <View style={ isSmallScreen
-  //           ? courseStyles.courseTileMobile
-  //           : courseStyles.courseTile} key={index.toString()}>
-  //       <TouchableOpacity style={courseStyles.tView}>
-  //         <Text style={courseStyles.courseTitle}>{item.title}</Text>
-  //         <Text style={courseStyles.courseDesc}>{item.description}</Text>
-  //       </TouchableOpacity>
-  //     </View>
-  //   );
-  // };
-
-  // const displayTileOne = () => {
-  //   return courseData?.map((item, index) => {
-  //     return courseTile(item, index);
-  //   });
-  // };
-  // const displayTileTwo = () => {
-  //   return courseDataTwo?.map((item, index) => {
-  //     return courseTileTwo(item, index);
-  //   });
-  // };
 
   return (
     <View
