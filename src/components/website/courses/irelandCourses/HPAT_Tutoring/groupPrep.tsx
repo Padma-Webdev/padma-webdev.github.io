@@ -75,10 +75,10 @@ export default function GroupPrepContainer() {
           style={
             isSmallScreen
               ? {
-                  backgroundColor: "#148190",
-                  borderRadius: 3,
+                  backgroundColor: "#2563EB",
+                  borderRadius: 10,
                   padding: 5,
-                  width: "95%",
+                  width: "85%",
                   alignSelf: "center",
                 }
               : {
@@ -92,7 +92,7 @@ export default function GroupPrepContainer() {
           }
           onPress={() => {
             Linking.openURL(
-              "mailto: contactus@medtutor.ie?subject=HPAT Tutoring &body=body"
+              "mailto: contactus@medtutor.ie?subject=HPAT Personalised Tutoring"
             );
           }}
         >
@@ -171,7 +171,13 @@ export default function GroupPrepContainer() {
 
   const CourseDetails = () => {
     return (
-      <View style={isSmallScreen?personalStyles.courseViewSmallScreen:personalStyles.courseView}>
+      <View
+        style={
+          isSmallScreen
+            ? personalStyles.courseViewSmallScreen
+            : personalStyles.courseView
+        }
+      >
         <View style={personalStyles.headerOpactiy} />
         {!groupTutor ? PersonalisedTutoring() : SmallGroupTutoring()}
       </View>
@@ -179,7 +185,13 @@ export default function GroupPrepContainer() {
   };
   const FAQs = () => {
     return (
-      <View style={personalStyles.courseView}>
+      <View
+        style={
+          isSmallScreen
+            ? personalStyles.courseViewSmallScreen
+            : personalStyles.courseView
+        }
+      >
         <View style={personalStyles.headerOpactiy} />
         {!groupTutor ? PersonalisedTutoringFAQ() : SmallGroupTutoringFAQs()}
       </View>
@@ -188,12 +200,26 @@ export default function GroupPrepContainer() {
 
   const DetailsButton = () => {
     return (
-      <View style={isSmallScreen?personalStyles.detailsViewSmallScreen:personalStyles.detailsView}>
+      <View
+        style={
+          isSmallScreen
+            ? personalStyles.detailsViewSmallScreen
+            : personalStyles.detailsView
+        }
+      >
         <TouchableOpacity
           style={personalStyles.detailsButton1}
           onPress={switchToCourse}
         >
-          <Text style={personalStyles.buttonCourseText}>Course Content</Text>
+          <Text
+            style={
+              isSmallScreen
+                ? personalStyles.buttonCourseTextSmallScreen
+                : personalStyles.buttonCourseText
+            }
+          >
+            Course Content
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={personalStyles.detailsButton1}
@@ -217,7 +243,11 @@ export default function GroupPrepContainer() {
         <SafeAreaView>
           <ImageBackground
             source={image}
-            style={{ flex: 1, width: screenWidth, height: screenHeight * 1.25 }}
+            style={{
+              flex: 1,
+              width: screenWidth,
+              height: isSmallScreen ? screenHeight * 1.25 : screenHeight * 1.35,
+            }}
           >
             <View
               style={{
@@ -230,7 +260,9 @@ export default function GroupPrepContainer() {
                 backgroundColor: "#080e19",
                 opacity: 0.3,
                 width: screenWidth,
-                height: screenHeight * 1.25,
+                height: isSmallScreen
+                  ? screenHeight * 1.25
+                  : screenHeight * 1.35,
               }}
             />
             <View style={hpatStyles.backButton}>

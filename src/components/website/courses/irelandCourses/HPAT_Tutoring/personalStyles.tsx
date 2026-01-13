@@ -25,7 +25,7 @@ export const personalStyles = StyleSheet.create({
     right: 0,
     bottom: 0,
     backgroundColor: "#080e19",
-    opacity: 0.5,
+    opacity: 0.65,
   },
   TitleText: {
     fontSize: 18,
@@ -117,7 +117,7 @@ export const personalStyles = StyleSheet.create({
     alignItems: "center",
   },
   courseView: {
-    width: "55%",
+    width: "70%",
     alignSelf: "center",
     padding: 15,
     borderRadius: 15,
@@ -140,7 +140,7 @@ export const personalStyles = StyleSheet.create({
     flexDirection: "row",
   },
   detailsViewSmallScreen: {
-    marginTop: 10,
+    marginTop: 5,
     width: "90%",
     alignSelf: "center",
     justifyContent: "space-around",
@@ -157,9 +157,15 @@ export const personalStyles = StyleSheet.create({
   },
   buttonCourseText: {
     fontSize: 20,
-    color: "080e19",
-    width: "55%",
-    justifyContent: "center",
+    color: "#080e19",
+    width: "65%",
+    alignContent: "center",
+  },
+    buttonCourseTextSmallScreen: {
+    fontSize: 20,
+    color: "#080e19",
+    width: "85%",
+    alignContent: "center",
   },
   buttonCourseText2: {
     fontSize: 20,

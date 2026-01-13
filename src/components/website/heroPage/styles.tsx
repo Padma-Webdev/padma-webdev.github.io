@@ -5,7 +5,7 @@ export const heroStyles = StyleSheet.create({
     marginVertical: "10%",
     marginHorizontal: "10%",
     flexDirection: "column",
-    width: "50%",
+    width: "70%",
   },
   mobileView: {
     marginVertical: "10%",

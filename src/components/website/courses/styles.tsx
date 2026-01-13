@@ -13,7 +13,7 @@ export const courseStyles = StyleSheet.create({
     height: "72%",
   },
   textboxOne: {
-    width: "50%",
+    width: "100%",
     alignSelf: "center",
     alignItems: "center",
     marginTop: 30,
@@ -25,7 +25,7 @@ export const courseStyles = StyleSheet.create({
     fontWeight: "500",
   },
   subtitle: {
-    width: "90%",
+    width: "85%",
     alignSelf: "center",
     justifyContent: "center",
     marginTop: 10,
