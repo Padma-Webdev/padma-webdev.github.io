@@ -21,7 +21,8 @@ export default function TutorsContainer() {
               }
             : {
                 flexDirection: "row",
-                justifyContent: "space-evenly",
+                justifyContent: "space-between",
+                backgroundColor:"red",
                 width: "100%",
                 // marginTop: 10,
               }

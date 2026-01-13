@@ -35,17 +35,28 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build Expo Web in dist/
+      # 4️⃣ Build Expo Web
       - name: Build Expo Web
         run: |
           rm -rf dist
           npx expo export --platform web --output-dir dist
 
-      # 5️⃣ Fix asset paths for GitHub Pages
-      - name: Fix Expo asset paths
+      # 5️⃣ Fix asset paths and images for GitHub Pages
+      - name: Fix paths for GitHub Pages
         run: |
-          sed -i 's|src="/_expo/|src="/MedTutor/_expo/|g' dist/index.html
-          sed -i 's|href="/_expo/|href="/MedTutor/_expo/|g' dist/index.html
+          # Fix Expo assets (_expo folder)
+          for file in dist/*.html; do
+            sed -i 's|src="/_expo/|src="/MedTutor/_expo/|g' "$file"
+            sed -i 's|href="/_expo/|href="/MedTutor/_expo/|g' "$file"
+          done
+
+          # Fix custom images/assets folder
+          for file in dist/*.html; do
+            sed -i 's|src="/assets/|src="/MedTutor/assets/|g' "$file"
+            sed -i 's|href="/assets/|href="/MedTutor/assets/|g' "$file"
+          done
+
+          # Copy index.html to 404.html for SPA routing
           cp dist/index.html dist/404.html
 
       # 6️⃣ Verify build output
@@ -56,14 +67,21 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 8️⃣ Upload dist/ folder
+      # 8️⃣ Optional: Cleanup old artifacts
+      - name: Cleanup old artifacts
+        run: |
+          echo "Cleaning up old GitHub Pages artifacts..."
+          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+          gh run artifacts delete --all || echo "No old artifacts found"
+
+      # 9️⃣ Upload Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-          # ✅ Do NOT rename artifact, leave default 'github-pages'
+          # ✅ Keep default name 'github-pages' for deploy
 
-      # 9️⃣ Deploy to GitHub Pages
+      # 🔟 Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
