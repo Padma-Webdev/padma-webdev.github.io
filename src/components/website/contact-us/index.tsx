@@ -1,4 +1,10 @@
-import { View, Text, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  Dimensions,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 import { courseStyles } from "../courses/styles";
 import { contactStyles } from "./styles";
 import { Mail, Phone } from "lucide-react";
@@ -31,20 +37,37 @@ export default function ContactUsContainer() {
             : contactStyles.buttonViewWeb
         }
       >
-        <View style={contactStyles.buttonStyle}>
+        <TouchableOpacity
+          style={
+            isSmallScreen
+              ? contactStyles.buttonStyleMobile
+              : contactStyles.buttonStyle
+          }
+          onPress={() => {
+            Linking.openURL(
+              "mailto: contactus@medtutor.ie?subject=General Queries"
+            );
+          }}
+        >
           <View style={contactStyles.buttonMargin}>
             <Mail style={contactStyles.iconStyle} />
             <Text style={contactStyles.titleText}>Email Us</Text>
             <Text style={contactStyles.subTitle}>Send us an email anytime</Text>
             <Text style={contactStyles.infoText}>contactus@medtutor.ie</Text>
           </View>
-        </View>
-        <View style={contactStyles.buttonStyle}>
+        </TouchableOpacity>
+        <View
+          style={
+            isSmallScreen
+              ? contactStyles.buttonStyleMobile
+              : contactStyles.buttonStyle
+          }
+        >
           <View style={contactStyles.buttonMargin}>
             <Phone style={contactStyles.iconStyle} />
             <Text style={contactStyles.titleText}>Call Us</Text>
             <Text style={contactStyles.subTitle}>Mon-Fri from 8am to 6pm</Text>
-            <Text style={contactStyles.infoText}>+353 874099759</Text>
+            <Text style={contactStyles.infoText}>+353 874 099759</Text>
           </View>
         </View>
       </View>

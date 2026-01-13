@@ -13,12 +13,11 @@ export const contactStyles = StyleSheet.create({
     height: "15%",
   },
   buttonViewMobile: {
-    width: "90%",
-    height: "37%",
+    width: "80%",
     marginTop: 20,
-    flexDirection: "row",
+    flexDirection: "column",
     alignSelf: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
   },
   buttonViewWeb: {
     width: "35%",
@@ -33,7 +32,16 @@ export const contactStyles = StyleSheet.create({
     width: "48%",
     borderRadius: 15,
     borderWidth: 2,
+    height:"80%",
     borderColor: "#06443e",
+  },
+    buttonStyleMobile: {
+    backgroundColor: "#0F1727",
+    width: "100%",
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: "#06443e",
+    marginBottom:20,
   },
   iconStyle: {
     color: "#23CFBB",
