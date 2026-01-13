@@ -112,7 +112,7 @@ export default function TutorsContainer() {
                       resizeMode:"contain"
                     }
               }
-              source={require("../../images/ABBYreverted.jpeg")}
+              source={require("../../images/ABBYjpeg")}
             />
           </View>
           <Text
