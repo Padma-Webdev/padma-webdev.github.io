@@ -56,12 +56,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 8️⃣ Upload dist/ folder as a uniquely named artifact
+      # 8️⃣ Upload dist/ folder
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-          name: github-pages-${{ github.run_id }}  # ✅ Unique per run
+          # ✅ Do NOT rename artifact, leave default 'github-pages'
 
       # 9️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
