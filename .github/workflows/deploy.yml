@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       # 1️⃣ Checkout repo
@@ -49,7 +48,6 @@ jobs:
           sed -i 's|href="/_expo/|href="/MedTutor/_expo/|g' dist/index.html
           cp dist/index.html dist/404.html
 
-
       # 6️⃣ Verify build output
       - name: Verify dist/ folder
         run: ls -la dist
@@ -58,11 +56,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 8️⃣ Upload dist/ folder
+      # 8️⃣ Upload dist/ folder as a uniquely named artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+          name: github-pages-${{ github.run_id }}  # ✅ Unique per run
 
       # 9️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
