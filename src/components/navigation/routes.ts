@@ -1,10 +1,10 @@
 export enum RoutePath {
   Home = "MedTutor",
-  ABOUTHPAT = "ABOUT-HPAT",
-  HPATDATES = "HPAT-DATES",
-  HPATCHANGES = "HPAT-CHANGES",
-  GROUPPREP = "GROUP-PREP",
-  WEEKPREP = "WEEK-PREP",
-  LEAVINGCERT = "LEAVING-CERT",
-  JUNIORCERT = "JUNIOR-CERT",
+  ABOUTHPAT = "hpat",
+  HPATDATES = "hpat-dates",
+  HPATCHANGES = "hpat-changes",
+  GROUPPREP = "group-prep",
+  WEEKPREP = "week-prep",
+  LEAVINGCERT = "leaving-cert",
+  JUNIORCERT = "junior-cert",
 }
