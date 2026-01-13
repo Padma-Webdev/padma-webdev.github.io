@@ -58,6 +58,12 @@ export const styles = StyleSheet.create({
     marginLeft: "5%",
     justifyContent: "space-evenly",
   },
+    headerSpaceMobile: {
+    flex: 0.7,
+    flexDirection: "column",
+    marginLeft: "6%",
+    justifyContent: "space-evenly",
+  },
   headerContentSpaceMobile: {
     flex: 1,
     flexDirection: "column",

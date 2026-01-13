@@ -53,24 +53,24 @@ export default function NavigationTop() {
   useEffect(() => {}, [hpatTutor]);
   useEffect(() => {}, [region]);
 
-  const regionalSwitch = () => {
-    return (
-      <View style={styles.reigonalSwitchView}>
-        <TouchableOpacity
-          style={region ? styles.activeRegion : styles.switchButton}
-          onPress={regionSwitchROI}
-        >
-          <Text style={styles.buttonText}>🇮🇪 IE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={!region ? styles.activeRegion : styles.switchButton}
-          onPress={regionSwitchUK}
-        >
-          <Text style={styles.buttonText}>🇬🇧 UK</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  };
+  // const regionalSwitch = () => {
+  //   return (
+  //     <View style={styles.reigonalSwitchView}>
+  //       <TouchableOpacity
+  //         style={region ? styles.activeRegion : styles.switchButton}
+  //         onPress={regionSwitchROI}
+  //       >
+  //         <Text style={styles.buttonText}>🇮🇪 IE</Text>
+  //       </TouchableOpacity>
+  //       <TouchableOpacity
+  //         style={!region ? styles.activeRegion : styles.switchButton}
+  //         onPress={regionSwitchUK}
+  //       >
+  //         <Text style={styles.buttonText}>🇬🇧 UK</Text>
+  //       </TouchableOpacity>
+  //     </View>
+  //   );
+  // };
 
   const courses = (item: any, index: any) => {
     return (
@@ -119,10 +119,10 @@ export default function NavigationTop() {
     });
   };
 
-  const coursesDataSwitch = () => {
-    const country = region;
-    return country ? displayROICourses() : displayUKCourses();
-  };
+  // const coursesDataSwitch = () => {
+  //   const country = region;
+  //   return country ? displayROICourses() : displayUKCourses();
+  // };
 
   return (
     <View>
@@ -134,8 +134,8 @@ export default function NavigationTop() {
           />
           <Text style={styles.headerLogoText}>MedTutor</Text>
         </View>
-        <View style={styles.headerContentSpace}> {coursesDataSwitch()}</View>
-        <View style={styles.regswitchView}>{regionalSwitch()}</View>
+        <View style={styles.headerContentSpace}> {displayROICourses()}</View>
+        {/* <View style={styles.regswitchView}>{regionalSwitch()}</View> */}
       </View>
       {hpat && (
         <View style={styles.hpatDropDownView}>
