@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Dimensions, Image } from "react-native";
 import { courseStyles } from "../courses/styles";
 import { useNavigation } from "@react-navigation/native";
-import AbbyImage from '../../assets/images/ABBY.jpeg'
+import AbbyImage from '../../images/ABBY.jpeg'
 
 export default function TutorsContainer() {
   const screenWidth = Dimensions.get("window").width;
