@@ -4,6 +4,7 @@ import { styles } from "./style";
 import { ukCourses } from "../courses/array";
 import { useNavigation } from "@react-navigation/native";
 import { RoutePath } from "../../navigation/routes";
+import { downloadPDF } from "../common/openPDF";
 
 export default function NavigationTop() {
   const navigation = useNavigation();
@@ -47,6 +48,13 @@ export default function NavigationTop() {
     showLeaveCert(true);
     showfreeRes(false);
     showMoreRes(false);
+  };
+
+  const handleFreeResources = () => {
+    showHpat(false);
+    showHpatTutor(false);
+    showLeaveCert(false);
+    showfreeRes(true);
   };
 
   useEffect(() => {}, [hpat]);
@@ -99,7 +107,7 @@ export default function NavigationTop() {
             <Text style={styles.headerText}>Leaving Cert Grinds</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleFreeResources()}>
           <View>
             <Text style={styles.headerText}>Free Resources</Text>
           </View>
@@ -113,11 +121,11 @@ export default function NavigationTop() {
     );
   };
 
-  const displayUKCourses = () => {
-    return ukCourses?.map((item, index) => {
-      return courses(item, index);
-    });
-  };
+  // const displayUKCourses = () => {
+  //   return ukCourses?.map((item, index) => {
+  //     return courses(item, index);
+  //   });
+  // };
 
   // const coursesDataSwitch = () => {
   //   const country = region;
@@ -153,9 +161,7 @@ export default function NavigationTop() {
             onPress={() => navigation.navigate(RoutePath.HPATCHANGES as never)}
           >
             <View style={{ marginTop: 3, marginBottom: 4 }}>
-              <Text style={styles.headerText}>
-                HPAT Changes - 2027
-              </Text>
+              <Text style={styles.headerText}>HPAT Changes - 2027</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -196,6 +202,31 @@ export default function NavigationTop() {
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
               <Text style={styles.headerText}>Junior Certificate</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      )}
+      {freeRes && (
+        <View style={styles.FreeResView}>
+          <TouchableOpacity
+            onPress={() => downloadPDF("../Section1.pdf", "Section 1.pdf")}
+          >
+            <View style={{ marginTop: 2, marginBottom: 2 }}>
+              <Text style={styles.headerText}>Section 1</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => downloadPDF("../HPAT Scoring Guide.pdf", "HPAT Scoring Guide.pdf")}
+          >
+            <View style={{ marginTop: 2, marginBottom: 2 }}>
+              <Text style={styles.headerText}>HPAT Scoring Guide</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => downloadPDF("../HPAT_Changes_2027 Free Resourses.pdf", "HPAT_Changes_2027 Free Resourses.pdf")}
+          >
+            <View style={{ marginTop: 2, marginBottom: 2 }}>
+              <Text style={styles.headerText}>HPAT_Changes_2027 Free Resourses</Text>
             </View>
           </TouchableOpacity>
         </View>

@@ -27,7 +27,8 @@
       "publicPath": "/MedTutor/"
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-asset"
     ]
   }
 }
