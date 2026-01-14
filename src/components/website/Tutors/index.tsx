@@ -27,65 +27,6 @@ export default function TutorsContainer() {
               }
         }
       >
-        {/* <View
-          style={
-            isSmallScreen
-              ? courseStyles.courseTileMobileT
-              : courseStyles.courseTileT
-          }
-        >
-          <View>
-            <Image
-              style={
-                isSmallScreen
-                  ? {
-                      width: screenWidth * 0.8,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
-                    }
-                  : {
-                      width: screenWidth * 0.195,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
-                    }
-              }
-              source={require("../../images/ABBY.jpeg")}
-            />
-          </View>
-          <Text
-            style={{
-              color: "white",
-              fontSize: 23,
-              fontWeight: "bold",
-              alignSelf: "center",
-            }}
-          >
-            Abby
-          </Text>
-          <View style={{ marginLeft: 10, marginTop: 10 }}>
-            <Text style={{ color: "white", fontSize: 18 }}>
-              Fourth-year Medical Student at Trinity College Dublin
-            </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              Strong background in teaching HPAT, Chemistry, and Mathematics
-            </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              Successfully completed the HPAT process and progressed through a
-              demanding medical degree
-            </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              Extensive understanding of the academic challenges and pressures
-              associated with high-stakes examinations
-            </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              Teaching approach is structured, clear, and student-centred, with
-              a strong focus on exam technique, problem-solving skills, and
-              building confidence
-            </Text>
-          </View>
-        </View> */}
         <View
           style={
             isSmallScreen
@@ -112,7 +53,7 @@ export default function TutorsContainer() {
                       resizeMode:"contain"
                     }
               }
-              source={require("../../images/ABBY.jpeg")}
+              source={require("/ABBY.jpeg")}
             />
           </View>
           <Text
@@ -168,7 +109,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("../../images/JAMAL.jpeg")}
+              source={require("/JAMAL.jpeg")}
             />
           </View>
           <Text
@@ -223,7 +164,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("../../images/ANJALI.jpeg")}
+              source={require("/ANJALI.jpeg")}
             />
           </View>
           <Text
@@ -278,7 +219,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("../../images/BRANAVI.jpg")}
+              source={require("/BRANAVI.jpg")}
             />
           </View>
           <Text

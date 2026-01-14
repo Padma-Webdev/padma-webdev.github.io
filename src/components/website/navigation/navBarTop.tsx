@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import { styles } from "./style";
-import { ukCourses } from "../courses/array";
 import { useNavigation } from "@react-navigation/native";
 import { RoutePath } from "../../navigation/routes";
-import { downloadPDF } from "../common/openPDF";
+
+export const downloadPDF = (fileName: string) => {
+  const link = document.createElement("a");
+  link.href = `./${fileName}`; // relative URL to public folder
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 export default function NavigationTop() {
   const navigation = useNavigation();
@@ -208,25 +215,23 @@ export default function NavigationTop() {
       )}
       {freeRes && (
         <View style={styles.FreeResView}>
-          <TouchableOpacity
-            onPress={() => downloadPDF("../Section1.pdf", "Section 1.pdf")}
-          >
+          <TouchableOpacity onPress={() => downloadPDF("Section 1.pdf")}>
             <View style={{ marginTop: 2, marginBottom: 2 }}>
               <Text style={styles.headerText}>Section 1</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => downloadPDF("../HPAT Scoring Guide.pdf", "HPAT Scoring Guide.pdf")}
+            onPress={() => downloadPDF("HPAT Scoring Guide.pdf")}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
               <Text style={styles.headerText}>HPAT Scoring Guide</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => downloadPDF("../HPAT_Changes_2027 Free Resourses.pdf", "HPAT_Changes_2027 Free Resourses.pdf")}
+            onPress={() => downloadPDF("HPAT Changes 2027.pdf")}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
-              <Text style={styles.headerText}>HPAT_Changes_2027 Free Resourses</Text>
+              <Text style={styles.headerText}>HPAT Changes 2027</Text>
             </View>
           </TouchableOpacity>
         </View>
