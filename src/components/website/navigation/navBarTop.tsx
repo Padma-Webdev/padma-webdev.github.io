@@ -3,6 +3,7 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import { styles } from "./style";
 import { useNavigation } from "@react-navigation/native";
 import { RoutePath } from "../../navigation/routes";
+import logo from '../../../../public/images/logo.png'
 
 export const downloadPDF = (fileName: string) => {
   const link = document.createElement("a");
@@ -147,7 +148,7 @@ export default function NavigationTop() {
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
           <Image
-            source={require("/images/logo.png")}
+            source={(logo)}
             style={styles.headerLogo}
           />
           <Text style={styles.headerLogoText}>MedTutor</Text>

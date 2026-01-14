@@ -6,6 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { ukCourses } from "../courses/array";
 import { RoutePath } from "../../navigation/routes";
 import { useNavigation } from "@react-navigation/native";
+import logo from '../../../../public/images/logo.png'
 
 export default function NavigationSide() {
   const navigation = useNavigation();
@@ -140,7 +141,7 @@ export default function NavigationSide() {
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
           <Image
-            source={require("/images/logo.png")}
+             source={(logo)}
             style={styles.headerLogo}
           />
           <Text style={styles.headerLogoText}>MedTutor</Text>

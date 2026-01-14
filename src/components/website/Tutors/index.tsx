@@ -2,6 +2,11 @@ import React from "react";
 import { View, Text, Dimensions, Image } from "react-native";
 import { courseStyles } from "../courses/styles";
 import { useNavigation } from "@react-navigation/native";
+import ABBY from '../../../../public/images/ABBY.jpeg'
+import JAMAL from '../../../../public/images/JAMAL.jpeg'
+import ANJALI from '../../../../public/images/ANJALI.jpeg'
+import BRANAVI from '../../../../public/images/BRANAVI.jpg'
+
 
 export default function TutorsContainer() {
   const screenWidth = Dimensions.get("window").width;
@@ -53,7 +58,7 @@ export default function TutorsContainer() {
                       resizeMode:"contain"
                     }
               }
-              source={require("/images/ABBY.jpeg")}
+              source={(ABBY)}
             />
           </View>
           <Text
@@ -109,7 +114,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("/images/JAMAL.jpeg")}
+              source={(JAMAL)}
             />
           </View>
           <Text
@@ -164,7 +169,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("/images/ANJALI.jpeg")}
+              source={(ANJALI)}
             />
           </View>
           <Text
@@ -219,7 +224,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("/images/BRANAVI.jpg")}
+              source={(BRANAVI)}
             />
           </View>
           <Text
