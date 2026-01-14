@@ -72,21 +72,17 @@ export default function TutorsContainer() {
             Abby Murphy
           </Text>
           <View style={{ marginLeft: 10, marginTop: 10 }}>
-            <Text style={{ color: "white", fontSize: 18 }}>
-              Abby is a fourth-year medical student at Trinity College Dublin
-              with a strong background in teaching HPAT, Chemistry, and
-              Mathematics. Having successfully navigated the HPAT process
-              herself and progressed through a demanding medical degree, she has
-              a deep understanding of both the academic challenges students face
-              and the pressure associated with high-stakes examinations.
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"4th Year Medical Student at Trinity College Dublin."}
             </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              Her teaching approach is structured, clear, and student-centred,
-              with a strong emphasis on exam technique, effective
-              problem-solving strategies, and building student confidence. Abby
-              tailors her lessons to each student’s needs, helping them develop
-              both the skills and self-assurance required to perform at their
-              best.
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Over 2,000 hours of tutoring experience, supporting 100+ students in HPAT, Maths, and Chemistry."}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Structured, clear, and student centred teaching style"}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Tailors lessons to individual student needs, building confidence and exam-ready skills"}
             </Text>
           </View>
         </View>
@@ -127,21 +123,18 @@ export default function TutorsContainer() {
           >
             Jamal Elsiddig
           </Text>
-          <View style={{ marginLeft: 10 }}>
-            <Text style={{ color: "white", fontSize: 18 }}>
-              Jamal Elsiddig is a first-year medical student at the Royal
-              College of Surgeons in Ireland (RCSI), Dublin. In 2025, she
-              successfully completed both the HPAT and the Leaving Certificate
-              in the same year, achieving an HPAT score of 173 and 601 Leaving
-              Certificate points (734 adjusted points).
+          <View style={{ marginLeft: 10, marginTop: 10 }}>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"1st year Medical Student at RCSI, Dublin"}
             </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              He attained H1 grades in Biology, Chemistry, Physics, and
-              Mathematics, along with H2 grades in Agricultural Science and
-              Physical Education, demonstrating strong academic ability across
-              both scientific and applied subjects. Jamal’s academic
-              achievements reflect her discipline, resilience, and commitment to
-              pursuing a career in medicine.
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Achieved top % results in both the HPAT and Leaving Certificate (2025)"}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Expert tutor in HPAT, Biology, Chemistry, and Physics"}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Experience in exam paper valuation and correction across multiple private institutions"}
             </Text>
           </View>
         </View>
@@ -183,20 +176,17 @@ export default function TutorsContainer() {
             Anjali Bachetta
           </Text>
           <View style={{ marginLeft: 10, marginTop: 10 }}>
-            <Text style={{ color: "white", fontSize: 18 }}>
-              Anjali is a fourth-year medical student at Worcester College,
-              University of Oxford, with over six years of tutoring experience
-              across all levels, from primary school to university admissions.
-              She has helped students gain offers from Oxford and Cambridge,
-              offering tailored support for UCAT preparation, interviews,
-              personal statements, and subject-specific tutoring.
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Fourth-year medical student at the University of Oxford"}
             </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              Her teaching is interactive and engaging, mirroring the
-              discussion-based Oxford tutorial style. Lessons focus on deep
-              understanding, critical thinking, and confidence-building, with
-              structured recaps to reinforce key concepts and ensure long-term
-              retention.
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Over 6 years of tutoring experience in UCAT, BMAT, personal statements, Oxbridge interviews, MMIs, and subject-specific tutoring"}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Supported students in gaining offers from Oxford and Cambridge through highly tailored guidance"}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Interactive and engaging teaching style, mirroring the discussion-based Oxford tutorial system"}
             </Text>
           </View>
         </View>
@@ -238,17 +228,17 @@ export default function TutorsContainer() {
             Branavi Yogathasan
           </Text>
           <View style={{ marginLeft: 10, marginTop: 10 }}>
-            <Text style={{ color: "white", fontSize: 18 }}>
-              Branavi Yogathasan is a first-year medical student at the
-              University of Bristol with four years of tutoring experience. She
-              scored 3120 in the UCAT (top 3%) and has attended six medical
-              school interviews, giving her firsthand insight into the
-              admissions process.
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"First-year medical student at the University of Bristol"}
             </Text>
-            <Text style={{ color: "white", marginTop: 8, fontSize: 18 }}>
-              Her teaching is interactive and student-focused, emphasizing exam
-              technique, problem-solving, and confidence-building, with
-              structured recaps to reinforce key concepts.
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"4 years of tutoring experience in A Level Subjects and 1 year in UCAT and MMIs."}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"UCAT score of 3120 (top 3%) with experience attending six medical school interviews, offering strong admissions insight"}
+            </Text>
+            <Text style={{ color: "white", fontSize: 15 }}>
+            {"\u2022"}{" "}{"Interactive, student-focused teaching style, emphasising exam technique, problem-solving, and confidence-building"}
             </Text>
           </View>
         </View>
