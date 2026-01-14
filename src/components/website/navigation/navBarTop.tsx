@@ -6,7 +6,7 @@ import { RoutePath } from "../../navigation/routes";
 
 export const downloadPDF = (fileName: string) => {
   const link = document.createElement("a");
-  link.href = `./${fileName}`; // relative URL to public folder
+  link.href = `/${fileName}`; // relative URL to public folder
   link.download = fileName;
   document.body.appendChild(link);
   link.click();
@@ -147,7 +147,7 @@ export default function NavigationTop() {
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
           <Image
-            source={require("../../images/logo.png")}
+            source={require("/logo.png")}
             style={styles.headerLogo}
           />
           <Text style={styles.headerLogoText}>MedTutor</Text>
