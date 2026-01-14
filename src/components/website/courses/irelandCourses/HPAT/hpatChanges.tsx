@@ -35,7 +35,7 @@ export default function HPATChangesContainer() {
               right: 0,
               bottom: 0,
               backgroundColor: "#080e19",
-              opacity: 0.3,
+              opacity: 0.7,
             }}
           />
           <Text style={hpatStyles.hpatTitle}>{item.title}</Text>
@@ -67,13 +67,9 @@ export default function HPATChangesContainer() {
               right: 0,
               bottom: 0,
               backgroundColor: "#080e19",
-              opacity: 0.5,
+              opacity: 0.6,
             }}
           />
-      <View style={hpatStyles.backButton}>
-        <BackButton />
-      </View>
-
       <View style={isSmallScreen?hpatStyles.hpatDisplayMobile:hpatStyles.hpatDisplay}>{displayHPAT()}</View>
       </ImageBackground>
               </SafeAreaView>

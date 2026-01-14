@@ -104,11 +104,11 @@ export default function NavigationTop() {
             <Text style={styles.headerText}>Free Resources</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <View>
             <Text style={styles.headerText}>More</Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     );
   };
@@ -150,18 +150,11 @@ export default function NavigationTop() {
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate(RoutePath.HPATDATES as never)}
-          >
-            <View style={{ marginTop: 3 }}>
-              <Text style={styles.headerText}>HPAT Dates, Fees & Results</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
             onPress={() => navigation.navigate(RoutePath.HPATCHANGES as never)}
           >
             <View style={{ marginTop: 3, marginBottom: 4 }}>
               <Text style={styles.headerText}>
-                HPAT Changes from 2027 and FAQs
+                HPAT Changes - 2027
               </Text>
             </View>
           </TouchableOpacity>
@@ -203,13 +196,6 @@ export default function NavigationTop() {
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
               <Text style={styles.headerText}>Junior Certificate</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate(RoutePath.WEEKPREP as never)}
-          >
-            <View style={{ marginTop: 2, marginBottom: 2 }}>
-              <Text style={styles.headerText}>Student Packages</Text>
             </View>
           </TouchableOpacity>
         </View>

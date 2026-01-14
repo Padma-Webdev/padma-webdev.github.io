@@ -21,43 +21,43 @@ export default function NavigationSide() {
   // };
 
   const [hpat, showHpat] = useState(false);
-    const [hpatTutor, showHpatTutor] = useState(false);
-    const [leaveCert, showLeaveCert] = useState(false);
-    const [freeRes, showfreeRes] = useState(false);
-    const [moreRes, showMoreRes] = useState(false);
-  
-    const handleHPAT = () => {
-      showHpat(true);
-      showHpatTutor(false);
-      showLeaveCert(false);
-      showfreeRes(false);
-      showMoreRes(false);
-    };
-  
-    const handleHPATTutoring = () => {
-      showHpat(false);
-      showHpatTutor(true);
-      showLeaveCert(false);
-      showfreeRes(false);
-      showMoreRes(false);
-    };
-  
-      const handleleavingCert = () => {
-      showHpat(false);
-      showHpatTutor(false);
-      showLeaveCert(true);
-      showfreeRes(false);
-      showMoreRes(false);
-    };
-  
-    useEffect(() => {}, [hpat]);
-    useEffect(() => {}, [hpatTutor]);
-    // useEffect(() => {}, [region]);
+  const [hpatTutor, showHpatTutor] = useState(false);
+  const [leaveCert, showLeaveCert] = useState(false);
+  const [freeRes, showfreeRes] = useState(false);
+  const [moreRes, showMoreRes] = useState(false);
 
-  const handleOnPress =()=>{
+  const handleHPAT = () => {
+    showHpat(true);
+    showHpatTutor(false);
+    showLeaveCert(false);
+    showfreeRes(false);
+    showMoreRes(false);
+  };
+
+  const handleHPATTutoring = () => {
+    showHpat(false);
+    showHpatTutor(true);
+    showLeaveCert(false);
+    showfreeRes(false);
+    showMoreRes(false);
+  };
+
+  const handleleavingCert = () => {
+    showHpat(false);
+    showHpatTutor(false);
+    showLeaveCert(true);
+    showfreeRes(false);
+    showMoreRes(false);
+  };
+
+  useEffect(() => {}, [hpat]);
+  useEffect(() => {}, [hpatTutor]);
+  // useEffect(() => {}, [region]);
+
+  const handleOnPress = () => {
     // navigation.navigate(RoutePath.HPAT as never)
-    setModalVisible(false)
-  }
+    setModalVisible(false);
+  };
 
   useEffect(() => {}, [modalVisible]);
 
@@ -83,9 +83,7 @@ export default function NavigationSide() {
   const courses = (item: any, index: any) => {
     return (
       <View style={styles.headerContentSpaceMobile} key={index.toString()}>
-        <TouchableOpacity
-          onPress={() => handleOnPress()}
-        >
+        <TouchableOpacity onPress={() => handleOnPress()}>
           <Text style={styles.headerTextMobile}>{item.title}</Text>
         </TouchableOpacity>
       </View>
@@ -114,11 +112,11 @@ export default function NavigationSide() {
             <Text style={styles.headerText}>Free Resources</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <View>
             <Text style={styles.headerText}>More</Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     );
   };
@@ -137,13 +135,16 @@ export default function NavigationSide() {
   return (
     <>
       <View style={styles.headerBackgroundMobile}>
-        <View style={styles.logoSpace}>
+        <TouchableOpacity
+          style={styles.logoSpace}
+          onPress={() => navigation.navigate(RoutePath.Home as never)}
+        >
           <Image
             source={require("../../images/logo.png")}
             style={styles.headerLogo}
           />
           <Text style={styles.headerLogoText}>MedTutor</Text>
-        </View>
+        </TouchableOpacity>
         <View style={{ flex: 1 }}>
           <TouchableOpacity style={styles.smallScreenHeader} onPress={show}>
             <MenuIcon width={12} height={10} sx={{ color: "#f8fefe" }} />
