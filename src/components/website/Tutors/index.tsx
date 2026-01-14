@@ -53,7 +53,7 @@ export default function TutorsContainer() {
                       resizeMode:"contain"
                     }
               }
-              source={require("/ABBY.jpeg")}
+              source={require("/images/ABBY.jpeg")}
             />
           </View>
           <Text
@@ -109,7 +109,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("/JAMAL.jpeg")}
+              source={require("/images/JAMAL.jpeg")}
             />
           </View>
           <Text
@@ -164,7 +164,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("/ANJALI.jpeg")}
+              source={require("/images/ANJALI.jpeg")}
             />
           </View>
           <Text
@@ -219,7 +219,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={require("/BRANAVI.jpg")}
+              source={require("/images/BRANAVI.jpg")}
             />
           </View>
           <Text

@@ -147,7 +147,7 @@ export default function NavigationTop() {
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
           <Image
-            source={require("/logo.png")}
+            source={require("/images/logo.png")}
             style={styles.headerLogo}
           />
           <Text style={styles.headerLogoText}>MedTutor</Text>
