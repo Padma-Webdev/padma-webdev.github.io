@@ -14,6 +14,12 @@ export const JuniorStyles = StyleSheet.create({
     alignItems: "flex-start",
     alignSelf: "center",
   },
+    topHeaderSmall: {
+    marginTop: "2%",
+    width: "95%",
+    alignItems: "flex-start",
+    alignSelf: "center",
+  },
   bullet: {
     fontSize: 20,
     color: "#f8fefe",

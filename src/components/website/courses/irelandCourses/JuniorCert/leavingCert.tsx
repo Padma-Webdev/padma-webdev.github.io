@@ -141,7 +141,15 @@ export default function LeavingCertContainer() {
               <BackButton />
             </View>
 
-            <View style={JuniorStyles.topHeader}>{Header()}</View>
+            <View
+              style={
+                isSmallScreen
+                  ? JuniorStyles.topHeaderSmall
+                  : JuniorStyles.topHeader
+              }
+            >
+              {Header()}
+            </View>
           </ImageBackground>
         </SafeAreaView>
       </SafeAreaProvider>
