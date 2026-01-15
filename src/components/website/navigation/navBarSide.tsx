@@ -9,6 +9,8 @@ import logo from "../../../../public/images/logo.png";
 import { PdfLink } from "./navBarTop";
 
 export default function NavigationSide() {
+  const isDev = process.env.NODE_ENV === "development";
+  const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
   const navigation = useNavigation();
   // const [region, setRegion] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
@@ -243,7 +245,10 @@ export default function NavigationSide() {
           style={styles.logoSpace}
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
-          <Image source={logo} style={styles.headerLogo} />
+          <Image
+            source={{ uri: `${BASE_URL}/images/logo.png` }}
+            style={styles.headerLogo}
+          />
           <Text style={styles.headerLogoText}>MedTutor</Text>
         </TouchableOpacity>
         <View style={{ flex: 1 }}>

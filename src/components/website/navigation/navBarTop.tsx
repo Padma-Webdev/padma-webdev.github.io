@@ -10,6 +10,9 @@ type PdfLinkProps = {
   pdfPath: string; // e.g. "/pdfs/terms.pdf"
 };
 
+  const isDev = process.env.NODE_ENV === "development";
+  const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
+
 export const PdfLink: React.FC<PdfLinkProps> = ({ label, pdfPath }) => {
   const isDev = process.env.NODE_ENV === "development";
   const BASE_URL = isDev ? "" : "/MedTutor";
@@ -163,7 +166,7 @@ export default function NavigationTop() {
           style={styles.logoSpace}
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
-          <Image source={logo} style={styles.headerLogo} />
+          <Image source={{ uri: `${BASE_URL}/images/logo.png` }} style={styles.headerLogo} />
           <Text style={styles.headerLogoText}>MedTutor</Text>
         </TouchableOpacity>
         <View style={styles.headerContentSpace}> {displayROICourses()}</View>
