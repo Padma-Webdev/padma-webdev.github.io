@@ -50,7 +50,7 @@ export default function TutorsContainer() {
                       borderRadius: 10,
                     }
               }
-              source={{ uri: `${BASE_URL}/images/abby.jpeg` }}
+              source={{ uri: `${BASE_URL}/images/anjali.jpeg` }}
             />
           </View>
           <View>
@@ -111,7 +111,7 @@ export default function TutorsContainer() {
                       margin: 10,
                     }
               }
-              source={{ uri: `${BASE_URL}/images/jamal.jpeg` }}
+              source={{ uri: `${BASE_URL}/images/anjali.jpeg` }}
             />
           </View>
           <Text
