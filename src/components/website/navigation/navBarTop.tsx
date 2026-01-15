@@ -1,17 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, Image, TouchableOpacity, Platform } from "react-native";
 import { styles } from "./style";
 import { useNavigation } from "@react-navigation/native";
 import { RoutePath } from "../../navigation/routes";
 import logo from "../../../../public/images/logo.png";
 
-export const downloadPDF = (fileName: string) => {
-  const link = document.createElement("a");
-  link.href = `/${fileName}`; // relative URL to public folder
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+type PdfLinkProps = {
+  label: string;
+  pdfPath: string; // e.g. "/pdfs/terms.pdf"
+};
+
+export const PdfLink: React.FC<PdfLinkProps> = ({ label, pdfPath }) => {
+  const openPdf = () => {
+    if (Platform.OS === "web") {
+      window.open(pdfPath, "_blank", "noopener,noreferrer");
+    }
+  };
+  {
+    label;
+  }
+
+  return (
+    <TouchableOpacity onPress={openPdf}>
+      <View style={{ marginTop: 2, marginBottom: 2 }}>
+        <Text style={styles.headerText}>{label}</Text>
+      </View>
+    </TouchableOpacity>
+  );
 };
 
 export default function NavigationTop() {
@@ -90,15 +105,15 @@ export default function NavigationTop() {
   //   );
   // };
 
-  const courses = (item: any, index: any) => {
-    return (
-      <View key={index.toString()}>
-        <TouchableOpacity>
-          <Text style={styles.headerText}>{item.title}</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  };
+  // const courses = (item: any, index: any) => {
+  //   return (
+  //     <View key={index.toString()}>
+  //       <TouchableOpacity>
+  //         <Text style={styles.headerText}>{item.title}</Text>
+  //       </TouchableOpacity>
+  //     </View>
+  //   );
+  // };
   const displayROICourses = () => {
     return (
       <View style={styles.headerSpace}>
@@ -215,12 +230,21 @@ export default function NavigationTop() {
       )}
       {freeRes && (
         <View style={styles.FreeResView}>
-          <TouchableOpacity onPress={() => downloadPDF("Section 1.pdf")}>
+          {/* <TouchableOpacity onPress={() => downloadPDF("Section 1.pdf")}>
             <View style={{ marginTop: 2, marginBottom: 2 }}>
               <Text style={styles.headerText}>Section 1</Text>
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+          </TouchableOpacity> */}
+          <PdfLink label="Section 1" pdfPath="/pdfs/Section1.pdf" />
+          <PdfLink
+            label="HPAT Scoring Guide"
+            pdfPath="/pdfs/HPAT Scoring Guide.pdf"
+          />
+          <PdfLink
+            label="HPAT Changes 2027"
+            pdfPath="/pdfs/HPAT Changes 2027.pdf"
+          />
+          {/* <TouchableOpacity
             onPress={() => downloadPDF("HPAT Scoring Guide.pdf")}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
@@ -233,7 +257,7 @@ export default function NavigationTop() {
             <View style={{ marginTop: 2, marginBottom: 2 }}>
               <Text style={styles.headerText}>HPAT Changes 2027</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       )}
     </View>

@@ -7,7 +7,7 @@ import { ukCourses } from "../courses/array";
 import { RoutePath } from "../../navigation/routes";
 import { useNavigation } from "@react-navigation/native";
 import logo from "../../../../public/images/logo.png";
-import { downloadPDF } from "./navBarTop";
+import { downloadPDF, PdfLink } from "./navBarTop";
 
 export default function NavigationSide() {
   const navigation = useNavigation();
@@ -206,25 +206,15 @@ export default function NavigationSide() {
         </TouchableOpacity>
         {freeRes && (
           <View style={{ marginTop: -25, marginLeft: 20 }}>
-            <TouchableOpacity onPress={() => downloadPDF("Section 1.pdf")}>
-              <View style={{ marginTop: 2, marginBottom: 2 }}>
-                <Text style={styles.headerText}>Section 1</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => downloadPDF("HPAT Scoring Guide.pdf")}
-            >
-              <View style={{ marginTop: 2 }}>
-                <Text style={styles.headerText}>HPAT Scoring Guide</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => downloadPDF("HPAT Changes 2027.pdf")}
-            >
-              <View style={{ marginTop: 10 }}>
-                <Text style={styles.headerText}>HPAT Changes 2027</Text>
-              </View>
-            </TouchableOpacity>
+            <PdfLink label="Section 1" pdfPath="/pdfs/Section1.pdf" />
+            <PdfLink
+              label="HPAT Scoring Guide"
+              pdfPath="/pdfs/HPAT Scoring Guide.pdf"
+            />
+            <PdfLink
+              label="HPAT Changes 2027"
+              pdfPath="/pdfs/HPAT Changes 2027.pdf"
+            />
           </View>
         )}
         {/* <TouchableOpacity>
