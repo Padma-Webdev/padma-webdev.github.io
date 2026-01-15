@@ -3,11 +3,10 @@ import { TouchableOpacity, View, Text, Image, Modal } from "react-native";
 import { styles } from "./style";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { ukCourses } from "../courses/array";
 import { RoutePath } from "../../navigation/routes";
 import { useNavigation } from "@react-navigation/native";
 import logo from "../../../../public/images/logo.png";
-import { downloadPDF, PdfLink } from "./navBarTop";
+import { PdfLink } from "./navBarTop";
 
 export default function NavigationSide() {
   const navigation = useNavigation();

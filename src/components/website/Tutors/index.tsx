@@ -162,7 +162,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={(ANJALI)}
+              source={{uri:"/images/JAMAL.jpeg"}}
             />
           </View>
           <Text
