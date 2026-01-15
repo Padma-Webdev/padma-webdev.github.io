@@ -58,7 +58,7 @@ export default function TutorsContainer() {
                       resizeMode:"contain"
                     }
               }
-              source={(ABBY)}
+              source={{uri:"/images/ABBY.jpeg"}}
             />
           </View>
           <Text
@@ -110,7 +110,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={(JAMAL)}
+              source={{uri:"/images/JAMAL.jpeg"}}
             />
           </View>
           <Text
@@ -162,7 +162,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={{uri:"/images/JAMAL.jpeg"}}
+              source={{uri:"/images/ANJALI.jpeg"}}
             />
           </View>
           <Text
@@ -214,7 +214,7 @@ export default function TutorsContainer() {
                       marginBottom: 20,
                     }
               }
-              source={(BRANAVI)}
+              source={{uri:"/images/BRANAVI.jpg"}}
             />
           </View>
           <Text
