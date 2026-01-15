@@ -29,19 +29,30 @@ export default function TutorsContainer() {
         <View
           style={
             isSmallScreen
-              ? courseStyles.courseTileMobileT
+              ? {
+                  flex: 1,
+                  backgroundColor: "#080e19",
+                  marginBottom: 10,
+                  width: "95%",
+                  padding: 20,
+                  borderRadius: 15,
+                  borderWidth: 1,
+                  borderColor: "#06443e",
+                  justifyContent: "space-around",
+                  flexDirection: "column",
+                }
               : courseStyles.courseTileT
           }
         >
-          <View>
+             <View style={isSmallScreen ? null :{alignSelf:"center",marginTop:10}}>
             <Image
               style={
                 isSmallScreen
                   ? {
-                      width: screenWidth * 0.8,
+                      width: "100%",
                       height: 300,
                       borderRadius: 10,
-                      marginBottom: 10,
+                      marginBottom: 15,
                     }
                   : {
                       width: screenWidth * 0.195,
@@ -90,19 +101,30 @@ export default function TutorsContainer() {
         <View
           style={
             isSmallScreen
-              ? courseStyles.courseTileMobileT
+              ? {
+                  flex: 1,
+                  backgroundColor: "#080e19",
+                  marginBottom: 10,
+                  width: "95%",
+                  padding: 20,
+                  borderRadius: 15,
+                  borderWidth: 1,
+                  borderColor: "#06443e",
+                  justifyContent: "space-around",
+                  flexDirection: "column",
+                }
               : courseStyles.courseTileT
           }
         >
-          <View>
+             <View style={isSmallScreen ? null :{alignSelf:"center",marginTop:10}}>
             <Image
               style={
                 isSmallScreen
                   ? {
-                      width: screenWidth * 0.8,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
+                      width: "100%",
+                      height: 300,
+                      borderRadius: 10,
+                      marginBottom: 15,
                     }
                   : {
                       width: screenWidth * 0.195,
@@ -149,19 +171,30 @@ export default function TutorsContainer() {
         <View
           style={
             isSmallScreen
-              ? courseStyles.courseTileMobileT
+              ? {
+                  flex: 1,
+                  backgroundColor: "#080e19",
+                  marginBottom: 10,
+                  width: "95%",
+                  padding: 20,
+                  borderRadius: 15,
+                  borderWidth: 1,
+                  borderColor: "#06443e",
+                  justifyContent: "space-around",
+                  flexDirection: "column",
+                }
               : courseStyles.courseTileT
           }
         >
-          <View>
+              <View style={isSmallScreen ? null :{alignSelf:"center",marginTop:10}}>
             <Image
               style={
                 isSmallScreen
                   ? {
-                      width: screenWidth * 0.8,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
+                      width: "100%",
+                      height: 300,
+                      borderRadius: 10,
+                      marginBottom: 15,
                     }
                   : {
                       width: screenWidth * 0.195,
@@ -170,7 +203,7 @@ export default function TutorsContainer() {
                       borderRadius: 10,
                     }
               }
-                 source={{ uri: `${BASE_URL}/images/anjali.jpeg` }}
+              source={{ uri: `${BASE_URL}/images/anjali.jpeg` }}
             />
           </View>
           <Text
@@ -211,19 +244,30 @@ export default function TutorsContainer() {
         <View
           style={
             isSmallScreen
-              ? courseStyles.courseTileMobileT
+              ? {
+                  flex: 1,
+                  backgroundColor: "#080e19",
+                  marginBottom: 10,
+                  width: "95%",
+                  padding: 20,
+                  borderRadius: 15,
+                  borderWidth: 1,
+                  borderColor: "#06443e",
+                  justifyContent: "space-around",
+                  flexDirection: "column",
+                }
               : courseStyles.courseTileT
           }
         >
-          <View>
+             <View style={isSmallScreen ? null :{alignSelf:"center",marginTop:10}}>
             <Image
               style={
                 isSmallScreen
                   ? {
-                      width: screenWidth * 0.8,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
+                      width: "100%",
+                      height: 300,
+                      borderRadius: 10,
+                      marginBottom: 15,
                     }
                   : {
                       width: screenWidth * 0.195,
@@ -232,7 +276,7 @@ export default function TutorsContainer() {
                       borderRadius: 10,
                     }
               }
-                   source={{ uri: `${BASE_URL}/images/branavi.jpeg` }}
+              source={{ uri: `${BASE_URL}/images/branavi.jpeg` }}
             />
           </View>
           <Text
@@ -245,7 +289,7 @@ export default function TutorsContainer() {
           >
             Branavi Yogathasan
           </Text>
-          <View style={{ marginLeft: 10, marginTop: 10 }}>
+          <View style={{ margin: 10 }}>
             <Text style={{ color: "white", fontSize: 15 }}>
               {"\u2022"}{" "}
               {"First-year medical student at the University of Bristol"}
@@ -277,7 +321,7 @@ export default function TutorsContainer() {
     <View
       style={
         isSmallScreen
-          ? { backgroundColor: "#0F1727", width: "100%", height: "65%" }
+          ? { backgroundColor: "#0F1727", width: "100%", height: "55%" }
           : { backgroundColor: "#0F1727", width: "100%", height: "40%" }
       }
     >
