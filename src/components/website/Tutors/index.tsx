@@ -50,7 +50,7 @@ export default function TutorsContainer() {
                       borderRadius: 10,
                     }
               }
-              source={{ uri: `${BASE_URL}/images/anjali.jpeg` }}
+              source={{ uri: `${BASE_URL}/images/abby.jpeg` }}
             />
           </View>
           <View>
@@ -111,7 +111,7 @@ export default function TutorsContainer() {
                       margin: 10,
                     }
               }
-              source={{ uri: `${BASE_URL}/images/anjali.jpeg` }}
+              source={{ uri: `${BASE_URL}/images/jamal.jpeg` }}
             />
           </View>
           <Text
@@ -278,7 +278,7 @@ export default function TutorsContainer() {
       style={
         isSmallScreen
           ? { backgroundColor: "#0F1727", width: "100%", height: "65%" }
-          : { backgroundColor: "#0F1727", width: "100%", height: "47%" }
+          : { backgroundColor: "#0F1727", width: "100%", height: "40%" }
       }
     >
       <View style={courseStyles.textboxOne}>
