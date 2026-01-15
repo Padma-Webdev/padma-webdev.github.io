@@ -208,11 +208,11 @@ export default function NavigationSide() {
             <PdfLink label="Section 1" pdfPath="/pdfs/Section1.pdf" />
             <PdfLink
               label="HPAT Scoring Guide"
-              pdfPath="/pdfs/HPAT Scoring Guide.pdf"
+              pdfPath="/pdfs/HPAT_Scoring_Guide.pdf"
             />
             <PdfLink
               label="HPAT Changes 2027"
-              pdfPath="/pdfs/HPAT Changes 2027.pdf"
+              pdfPath="/pdfs/HPAT_Changes_2027.pdf"
             />
           </View>
         )}
