@@ -2,15 +2,12 @@ import React from "react";
 import { View, Text, Dimensions, Image } from "react-native";
 import { courseStyles } from "../courses/styles";
 import { useNavigation } from "@react-navigation/native";
-import ABBY from '../../../../public/images/ABBY.jpeg'
-import JAMAL from '../../../../public/images/JAMAL.jpeg'
-import ANJALI from '../../../../public/images/ANJALI.jpeg'
-import BRANAVI from '../../../../public/images/BRANAVI.jpg'
-
 
 export default function TutorsContainer() {
   const screenWidth = Dimensions.get("window").width;
   const isSmallScreen = screenWidth < 740;
+  const isDev = process.env.NODE_ENV === "development";
+  const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
 
   const courseTile = () => {
     const navigation = useNavigation();
@@ -21,14 +18,11 @@ export default function TutorsContainer() {
             ? {
                 flexDirection: "column",
                 justifyContent: "space-evenly",
-                // width: "100%",
-                // marginTop: 10,
               }
             : {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 width: "100%",
-                // marginTop: 10,
               }
         }
       >
@@ -45,44 +39,51 @@ export default function TutorsContainer() {
                 isSmallScreen
                   ? {
                       width: screenWidth * 0.8,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
-                      resizeMode:"contain"
+                      height: 300,
+                      borderRadius: 10,
+                      marginBottom: 10,
                     }
                   : {
                       width: screenWidth * 0.195,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
-                      resizeMode:"contain"
+                      height: 350,
+                      margin: 10,
+                      borderRadius: 10,
                     }
               }
-              source={{uri:"/images/ABBY.jpeg"}}
+              source={{ uri: `${BASE_URL}/images/abby.jpeg` }}
             />
           </View>
-          <Text
-            style={{
-              color: "white",
-              fontSize: 23,
-              fontWeight: "bold",
-              alignSelf: "center",
-            }}
-          >
-            Abby Murphy
-          </Text>
-          <View style={{ marginLeft: 10, marginTop: 10 }}>
+          <View>
+            <Text
+              style={{
+                color: "white",
+                fontSize: 23,
+                fontWeight: "bold",
+                alignSelf: "center",
+              }}
+            >
+              Abby Murphy
+            </Text>
+          </View>
+          <View style={{ margin: 10, marginLeft: 20 }}>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"4th Year Medical Student at Trinity College Dublin."}
+              {"\u2022"} {"4th Year Medical Student at Trinity College Dublin."}
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Over 2,000 hours of tutoring experience, supporting 100+ students in HPAT, Maths, and Chemistry."}
+              {"\u2022"}{" "}
+              {
+                "Over 2,000 hours of tutoring experience, supporting 100+ students in HPAT, Maths, and Chemistry."
+              }
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Structured, clear, and student centred teaching style"}
+              {"\u2022"}{" "}
+              {"Structured, clear, and student centred teaching style"}
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Tailors lessons to individual student needs, building confidence and exam-ready skills"}
+              {"\u2022"}{" "}
+              {
+                "Tailors lessons to individual student needs, building confidence and exam-ready skills"
+              }
             </Text>
           </View>
         </View>
@@ -105,12 +106,12 @@ export default function TutorsContainer() {
                     }
                   : {
                       width: screenWidth * 0.195,
-                      height: 450,
+                      height: 350,
                       borderRadius: 5,
-                      marginBottom: 20,
+                      margin: 10,
                     }
               }
-              source={{uri:"/images/JAMAL.jpeg"}}
+              source={{ uri: `${BASE_URL}/images/jamal.jpeg` }}
             />
           </View>
           <Text
@@ -123,18 +124,25 @@ export default function TutorsContainer() {
           >
             Jamal Elsiddig
           </Text>
-          <View style={{ marginLeft: 10, marginTop: 10 }}>
+          <View style={{ margin: 10, marginLeft: 20 }}>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"1st year Medical Student at RCSI, Dublin"}
+              {"\u2022"} {"1st year Medical Student at RCSI, Dublin"}
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Achieved top % results in both the HPAT and Leaving Certificate (2025)"}
+              {"\u2022"}{" "}
+              {
+                "Achieved top % results in both the HPAT and Leaving Certificate (2025)"
+              }
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Expert tutor in HPAT, Biology, Chemistry, and Physics"}
+              {"\u2022"}{" "}
+              {"Expert tutor in HPAT, Biology, Chemistry, and Physics"}
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Experience in exam paper valuation and correction across multiple private institutions"}
+              {"\u2022"}{" "}
+              {
+                "Experience in exam paper valuation and correction across multiple private institutions"
+              }
             </Text>
           </View>
         </View>
@@ -157,12 +165,12 @@ export default function TutorsContainer() {
                     }
                   : {
                       width: screenWidth * 0.195,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
+                      height: 350,
+                      margin: 10,
+                      borderRadius: 10,
                     }
               }
-              source={{uri:"/images/ANJALI.jpeg"}}
+                 source={{ uri: `${BASE_URL}/images/anjali.jpeg` }}
             />
           </View>
           <Text
@@ -175,18 +183,28 @@ export default function TutorsContainer() {
           >
             Anjali Bachetta
           </Text>
-          <View style={{ marginLeft: 10, marginTop: 10 }}>
+          <View style={{ margin: 10 }}>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Fourth-year medical student at the University of Oxford"}
+              {"\u2022"}{" "}
+              {"Fourth-year medical student at the University of Oxford"}
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Over 6 years of tutoring experience in UCAT, BMAT, personal statements, Oxbridge interviews, MMIs, and subject-specific tutoring"}
+              {"\u2022"}{" "}
+              {
+                "Over 6 years of tutoring experience in UCAT, BMAT, MMIs, and subject-specific tutoring"
+              }
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Supported students in gaining offers from Oxford and Cambridge through highly tailored guidance"}
+              {"\u2022"}{" "}
+              {
+                "Supported students in gaining offers from Oxford and Cambridge through highly tailored guidance"
+              }
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Interactive and engaging teaching style, mirroring the discussion-based Oxford tutorial system"}
+              {"\u2022"}{" "}
+              {
+                "Interactive and engaging teaching style, mirroring the discussion-based Oxford tutorial system"
+              }
             </Text>
           </View>
         </View>
@@ -209,12 +227,12 @@ export default function TutorsContainer() {
                     }
                   : {
                       width: screenWidth * 0.195,
-                      height: 450,
-                      borderRadius: 5,
-                      marginBottom: 20,
+                      height: 350,
+                      margin: 10,
+                      borderRadius: 10,
                     }
               }
-              source={{uri:"/images/BRANAVI.jpg"}}
+                   source={{ uri: `${BASE_URL}/images/branavi.jpeg` }}
             />
           </View>
           <Text
@@ -229,16 +247,26 @@ export default function TutorsContainer() {
           </Text>
           <View style={{ marginLeft: 10, marginTop: 10 }}>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"First-year medical student at the University of Bristol"}
+              {"\u2022"}{" "}
+              {"First-year medical student at the University of Bristol"}
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"4 years of tutoring experience in A Level Subjects and 1 year in UCAT and MMIs."}
+              {"\u2022"}{" "}
+              {
+                "4 years of tutoring experience in A Level Subjects and 1 year in UCAT and MMIs."
+              }
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"UCAT score of 3120 (top 3%) with experience attending six medical school interviews, offering strong admissions insight"}
+              {"\u2022"}{" "}
+              {
+                "UCAT score of 3120 (top 3%) with experience attending six medical school interviews, offering strong admissions insight"
+              }
             </Text>
             <Text style={{ color: "white", fontSize: 15 }}>
-            {"\u2022"}{" "}{"Interactive, student-focused teaching style, emphasising exam technique, problem-solving, and confidence-building"}
+              {"\u2022"}{" "}
+              {
+                "Interactive, student-focused teaching style, emphasising exam technique, problem-solving, and confidence-building"
+              }
             </Text>
           </View>
         </View>
