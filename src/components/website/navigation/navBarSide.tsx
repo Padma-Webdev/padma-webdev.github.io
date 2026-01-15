@@ -6,7 +6,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { ukCourses } from "../courses/array";
 import { RoutePath } from "../../navigation/routes";
 import { useNavigation } from "@react-navigation/native";
-import logo from '../../../../public/images/logo.png'
+import logo from "../../../../public/images/logo.png";
+import { downloadPDF } from "./navBarTop";
 
 export default function NavigationSide() {
   const navigation = useNavigation();
@@ -25,14 +26,19 @@ export default function NavigationSide() {
   const [hpatTutor, showHpatTutor] = useState(false);
   const [leaveCert, showLeaveCert] = useState(false);
   const [freeRes, showfreeRes] = useState(false);
-  const [moreRes, showMoreRes] = useState(false);
+
+  const handleOnPress = () => {
+    // navigation.navigate(RoutePath.HPAT as never)
+    setModalVisible(false);
+  };
 
   const handleHPAT = () => {
     showHpat(true);
     showHpatTutor(false);
     showLeaveCert(false);
     showfreeRes(false);
-    showMoreRes(false);
+    close;
+    // showMoreRes(false);
   };
 
   const handleHPATTutoring = () => {
@@ -40,7 +46,7 @@ export default function NavigationSide() {
     showHpatTutor(true);
     showLeaveCert(false);
     showfreeRes(false);
-    showMoreRes(false);
+    // showMoreRes(false);
   };
 
   const handleleavingCert = () => {
@@ -48,16 +54,25 @@ export default function NavigationSide() {
     showHpatTutor(false);
     showLeaveCert(true);
     showfreeRes(false);
-    showMoreRes(false);
+    // showMoreRes(false);
+  };
+
+  const handleFreeResources = () => {
+    showHpat(false);
+    showHpatTutor(false);
+    showLeaveCert(false);
+    showfreeRes(true);
   };
 
   useEffect(() => {}, [hpat]);
   useEffect(() => {}, [hpatTutor]);
+  useEffect(() => {}, [leaveCert]);
+  useEffect(() => {}, [freeRes]);
   // useEffect(() => {}, [region]);
 
-  const handleOnPress = () => {
-    // navigation.navigate(RoutePath.HPAT as never)
-    setModalVisible(false);
+  const handleAboutHPat = () => {
+    navigation.navigate(RoutePath.ABOUTHPAT as never);
+    close;
   };
 
   useEffect(() => {}, [modalVisible]);
@@ -98,21 +113,120 @@ export default function NavigationSide() {
             <Text style={styles.headerText}>HPAT</Text>
           </View>
         </TouchableOpacity>
+        {hpat && (
+          <View style={{ marginTop: -25, marginLeft: 20 }}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(RoutePath.ABOUTHPAT as never);
+                setModalVisible(false);
+              }}
+            >
+              <View style={{ marginTop: 2 }}>
+                <Text style={styles.headerText}>About HPAT</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(RoutePath.HPATCHANGES as never);
+                setModalVisible(false);
+              }}
+            >
+              <View style={{ marginTop: 10 }}>
+                <Text style={styles.headerText}>HPAT Changes - 2027</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        )}
         <TouchableOpacity onPress={() => handleHPATTutoring()}>
           <View>
             <Text style={styles.headerText}>HPAT Tutoring</Text>
           </View>
         </TouchableOpacity>
+        {hpatTutor && (
+          <View style={{ marginTop: -25, marginLeft: 20 }}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(RoutePath.GROUPPREP as never);
+                setModalVisible(false);
+              }}
+            >
+              <View style={{ marginTop: 2 }}>
+                <Text style={styles.headerText}>
+                  1:1 & Small Group HPAT Preparation(Online)
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(RoutePath.WEEKPREP as never);
+                setModalVisible(false);
+              }}
+            >
+              <View style={{ marginTop: 10 }}>
+                <Text style={styles.headerText}>
+                  2 Days and 8 Week HPAT Preparation Course
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        )}
         <TouchableOpacity onPress={() => handleleavingCert()}>
           <View>
             <Text style={styles.headerText}>Leaving Cert Grinds</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        {leaveCert && (
+          <View style={{ marginTop: -25, marginLeft: 20 }}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(RoutePath.LEAVINGCERT as never),
+                  setModalVisible(false);
+              }}
+            >
+              <View style={{ marginTop: 2 }}>
+                <Text style={styles.headerText}>Leaving Certificate</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(RoutePath.JUNIORCERT as never),
+                  setModalVisible(false);
+              }}
+            >
+              <View style={{ marginTop: 10 }}>
+                <Text style={styles.headerText}>Junior Certificate</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        )}
+        <TouchableOpacity onPress={() => handleFreeResources()}>
           <View>
             <Text style={styles.headerText}>Free Resources</Text>
           </View>
         </TouchableOpacity>
+        {freeRes && (
+          <View style={{ marginTop: -25, marginLeft: 20 }}>
+            <TouchableOpacity onPress={() => downloadPDF("Section 1.pdf")}>
+              <View style={{ marginTop: 2, marginBottom: 2 }}>
+                <Text style={styles.headerText}>Section 1</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => downloadPDF("HPAT Scoring Guide.pdf")}
+            >
+              <View style={{ marginTop: 2 }}>
+                <Text style={styles.headerText}>HPAT Scoring Guide</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => downloadPDF("HPAT Changes 2027.pdf")}
+            >
+              <View style={{ marginTop: 10 }}>
+                <Text style={styles.headerText}>HPAT Changes 2027</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        )}
         {/* <TouchableOpacity>
           <View>
             <Text style={styles.headerText}>More</Text>
@@ -140,10 +254,7 @@ export default function NavigationSide() {
           style={styles.logoSpace}
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
-          <Image
-             source={(logo)}
-            style={styles.headerLogo}
-          />
+          <Image source={logo} style={styles.headerLogo} />
           <Text style={styles.headerLogoText}>MedTutor</Text>
         </TouchableOpacity>
         <View style={{ flex: 1 }}>

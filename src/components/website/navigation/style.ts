@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   headerBackgroundMobile: {
     backgroundColor: "#0d1623",
     width: "100%",
-    height: "1.8%",
+    height: "1.2%",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "flex-start",
@@ -116,6 +116,19 @@ export const styles = StyleSheet.create({
   buttonText: { color: "white", fontSize: 13, alignSelf: "center" },
   regswitchView: { alignSelf: "center", marginRight: "1%" },
   hpatDropDownView: {
+    flex: 0.23,
+    flexDirection: "column",
+    width: 220,
+    height: "100%",
+    marginLeft: "30%",
+    justifyContent: "space-evenly",
+    backgroundColor: "#112230",
+    borderRadius: 10,
+    borderColor: "#23CFBB",
+    borderWidth: 1,
+    padding: 5,
+  },
+    hpatDropDownViewSmall: {
     flex: 0.23,
     flexDirection: "column",
     width: 220,

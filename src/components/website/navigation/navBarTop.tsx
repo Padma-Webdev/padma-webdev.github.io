@@ -3,7 +3,7 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import { styles } from "./style";
 import { useNavigation } from "@react-navigation/native";
 import { RoutePath } from "../../navigation/routes";
-import logo from '../../../../public/images/logo.png'
+import logo from "../../../../public/images/logo.png";
 
 export const downloadPDF = (fileName: string) => {
   const link = document.createElement("a");
@@ -16,30 +16,30 @@ export const downloadPDF = (fileName: string) => {
 
 export default function NavigationTop() {
   const navigation = useNavigation();
-  const [region, setRegion] = useState(true);
+  // const [region, setRegion] = useState(true);
   const [hpat, showHpat] = useState(false);
   const [hpatTutor, showHpatTutor] = useState(false);
   const [leaveCert, showLeaveCert] = useState(false);
   const [freeRes, showfreeRes] = useState(false);
-  const [moreRes, showMoreRes] = useState(false);
-  const regionSwitchROI = () => {
-    setRegion(true);
-  };
-  const regionSwitchUK = () => {
-    setRegion(false);
-    showHpat(false);
-    showHpatTutor(false);
-    showLeaveCert(false);
-    showfreeRes(false);
-    showMoreRes(false);
-  };
+  // const [moreRes, showMoreRes] = useState(false);
+  // const regionSwitchROI = () => {
+  //   setRegion(true);
+  // };
+  // const regionSwitchUK = () => {
+  //   setRegion(false);
+  //   showHpat(false);
+  //   showHpatTutor(false);
+  //   showLeaveCert(false);
+  //   showfreeRes(false);
+  //   showMoreRes(false);
+  // };
 
   const handleHPAT = () => {
     showHpat(true);
     showHpatTutor(false);
     showLeaveCert(false);
     showfreeRes(false);
-    showMoreRes(false);
+    // showMoreRes(false);
   };
 
   const handleHPATTutoring = () => {
@@ -47,7 +47,7 @@ export default function NavigationTop() {
     showHpatTutor(true);
     showLeaveCert(false);
     showfreeRes(false);
-    showMoreRes(false);
+    // showMoreRes(false);
   };
 
   const handleleavingCert = () => {
@@ -55,7 +55,7 @@ export default function NavigationTop() {
     showHpatTutor(false);
     showLeaveCert(true);
     showfreeRes(false);
-    showMoreRes(false);
+    // showMoreRes(false);
   };
 
   const handleFreeResources = () => {
@@ -67,7 +67,9 @@ export default function NavigationTop() {
 
   useEffect(() => {}, [hpat]);
   useEffect(() => {}, [hpatTutor]);
-  useEffect(() => {}, [region]);
+  useEffect(() => {}, [freeRes]);
+  useEffect(() => {}, [leaveCert]);
+  // useEffect(() => {}, [region]);
 
   // const regionalSwitch = () => {
   //   return (
@@ -147,10 +149,7 @@ export default function NavigationTop() {
           style={styles.logoSpace}
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
-          <Image
-            source={(logo)}
-            style={styles.headerLogo}
-          />
+          <Image source={logo} style={styles.headerLogo} />
           <Text style={styles.headerLogoText}>MedTutor</Text>
         </TouchableOpacity>
         <View style={styles.headerContentSpace}> {displayROICourses()}</View>
