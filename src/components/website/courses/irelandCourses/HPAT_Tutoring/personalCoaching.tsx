@@ -40,13 +40,31 @@ export const PersonalisedTutoring = () => {
         >
           Price:{" "}
         </Text>
-        <Text
-          style={
-            isSmallScreen ? groupStyles.pricingSmallScreen : groupStyles.pricing
-          }
-        >
-          €34 per session (15% discount from €40)
-        </Text>
+        <View style={{ flexDirection: "row"}}>
+          <Text
+            style={
+              isSmallScreen
+                ? groupStyles.pricingSmallScreen
+                : groupStyles.pricing
+            }
+          >
+            €34 per session
+          </Text>
+          <Text
+            style={
+              isSmallScreen
+                ? groupStyles.groupHeaderSmallScreen
+                : {
+                    fontSize: 16,
+                    color: "#f8fefe",
+                    marginBottom: 6,
+                    marginLeft: 5,
+                  }
+            }
+          >
+            (15% discount from €40)
+          </Text>
+        </View>
       </View>
       <Text
         style={
