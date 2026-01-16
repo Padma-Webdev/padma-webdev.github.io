@@ -163,7 +163,7 @@ export const personalStyles = StyleSheet.create({
   },
   buttonCourseText: {
     fontSize: 20,
-    color: "#080e19",
+    // color: "#080e19",
     width: "65%",
     alignContent: "center",
   },

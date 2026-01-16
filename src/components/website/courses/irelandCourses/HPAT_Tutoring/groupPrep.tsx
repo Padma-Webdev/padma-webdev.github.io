@@ -30,7 +30,16 @@ export const getButtonColor = (state: ButtonState): string => {
     default:
       return "#23CFBB";
   }
-}
+};
+export const getSecondButtonColor = (state: ButtonState): string => {
+  switch (state) {
+    case "pressed":
+      return "#159688"; // darker teal
+    case "default":
+    default:
+      return "#C2F5EF";
+  }
+};
 export const getTextColor = (state: ButtonState): string => {
   switch (state) {
     case "pressed":
@@ -39,7 +48,7 @@ export const getTextColor = (state: ButtonState): string => {
     default:
       return "black";
   }
-}
+};
 export default function GroupPrepContainer() {
   const screenWidth = Dimensions.get("window").width;
   const screenHeight = Dimensions.get("window").height;
@@ -49,18 +58,29 @@ export default function GroupPrepContainer() {
   };
   const [groupTutor, setGroupTutor] = useState(false);
   const [showFAQs, setShowFAQs] = useState(false);
-    const [buttononeState, setoneButtonState] =
+  const [buttononeState, setoneButtonState] = useState<ButtonState>("default");
+  const [buttonGroupState, setgroupButtonState] =
     useState<ButtonState>("default");
-        const [buttonGroupState, setgroupButtonState] =
+      const [buttonCourseState, setCourseButtonState] = useState<ButtonState>("default");
+  const [buttonFAQState, setFAQButtonState] =
     useState<ButtonState>("default");
 
   const handlePressOneIn = (_: GestureResponderEvent) => {
     setgroupButtonState("default");
     setoneButtonState("pressed");
   };
-    const handlePressgroupIn = (_: GestureResponderEvent) => {
+  const handlePressgroupIn = (_: GestureResponderEvent) => {
     setgroupButtonState("pressed");
     setoneButtonState("default");
+  };
+
+    const handlePressCourse = (_: GestureResponderEvent) => {
+    setFAQButtonState("default");
+    setCourseButtonState("pressed");
+  };
+  const handlePressgFAQ= (_: GestureResponderEvent) => {
+    setFAQButtonState("pressed");
+    setCourseButtonState("default");
   };
 
   // const handlePressOut = (_: GestureResponderEvent) => {
@@ -70,7 +90,7 @@ export default function GroupPrepContainer() {
   const switchToGroup = () => {
     setGroupTutor(true);
   };
-    useEffect(() => {}, [groupTutor]);
+  useEffect(() => {}, [groupTutor]);
   const switchToPersonal = () => {
     setGroupTutor(false);
   };
@@ -170,17 +190,20 @@ export default function GroupPrepContainer() {
           <TouchableOpacity
             onPress={switchToPersonal}
             onPressIn={handlePressOneIn}
-            style={[isSmallScreen
+            style={[
+              isSmallScreen
                 ? personalStyles.personalTutorSmallScreen
-                : personalStyles.personalTutor,{ backgroundColor: getButtonColor(buttononeState) },
+                : personalStyles.personalTutor,
+              { backgroundColor: getButtonColor(buttononeState) },
             ]}
           >
             <Text
-              style={
-                [isSmallScreen
+              style={[
+                isSmallScreen
                   ? personalStyles.buttonTextSmallScreen
-                  : personalStyles.buttonText,{color:getTextColor(buttononeState)}]
-              }
+                  : personalStyles.buttonText,
+                { color: getTextColor(buttononeState) },
+              ]}
             >
               1:1 HPAT Tutoring
             </Text>
@@ -188,17 +211,20 @@ export default function GroupPrepContainer() {
           <TouchableOpacity
             onPress={switchToGroup}
             onPressIn={handlePressgroupIn}
-            style={[isSmallScreen
+            style={[
+              isSmallScreen
                 ? personalStyles.personalTutorSmallScreen
-                : personalStyles.personalTutor,{ backgroundColor: getButtonColor(buttonGroupState) },
+                : personalStyles.personalTutor,
+              { backgroundColor: getButtonColor(buttonGroupState) },
             ]}
           >
             <Text
-              style={
-                [isSmallScreen
+              style={[
+                isSmallScreen
                   ? personalStyles.button2TextSmallScreen
-                  : personalStyles.button2Text,{color:getTextColor(buttonGroupState)}]
-              }
+                  : personalStyles.button2Text,
+                { color: getTextColor(buttonGroupState) },
+              ]}
             >
               Small Group Tutoring
             </Text>
@@ -248,23 +274,29 @@ export default function GroupPrepContainer() {
       >
         <TouchableOpacity
           onPress={switchToCourse}
-          style={personalStyles.detailsButton1} 
+          onPressIn={handlePressCourse}
+          style={[personalStyles.detailsButton1,
+              { backgroundColor: getSecondButtonColor(buttonCourseState) },
+            ]}
         >
           <Text
             style={
-              isSmallScreen
+              [isSmallScreen
                 ? personalStyles.buttonCourseTextSmallScreen
                 : personalStyles.buttonCourseText
-            }
+            ,{ color: getTextColor(buttonCourseState) },]}
           >
             Course Content
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={personalStyles.detailsButton1}
-          onPress={switchToFAQs}
+        onPress={switchToFAQs}
+        onPressIn={handlePressgFAQ}
+          style={[personalStyles.detailsButton1,
+              { backgroundColor: getSecondButtonColor(buttonFAQState) },
+            ]}
         >
-          <Text style={personalStyles.buttonCourseText2}>FAQs</Text>
+          <Text style={[personalStyles.buttonCourseText2,{ color: getTextColor(buttonFAQState) },]}>FAQs</Text>
         </TouchableOpacity>
       </View>
     );
