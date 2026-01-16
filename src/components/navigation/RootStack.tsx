@@ -33,8 +33,8 @@ type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const linking: LinkingOptions<RootStackParamList>  = {
-  prefixes: ["/MedTutor"],
-};
+  prefixes: [process.env.EXPO_PUBLIC_BASE_URL ?? "/"],
+};;
 
 const RootStack = () => {
   return (
