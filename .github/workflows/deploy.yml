@@ -21,16 +21,15 @@ jobs:
       name: github-pages
 
     steps:
-      # 1️⃣ Checkout repository
+      # 1️⃣ Checkout repo
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
+      # 2️⃣ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       # 3️⃣ Install dependencies
       - name: Install dependencies
@@ -42,25 +41,47 @@ jobs:
           rm -rf dist
           npx expo export --platform web --output-dir dist
 
-      # 5️⃣ SPA fallback for React Navigation
-      - name: Add 404.html for SPA routing
-        run: cp dist/index.html dist/404.html
+      # 5️⃣ Fix asset paths and images for GitHub Pages
+      - name: Fix paths for GitHub Pages
+        run: |
+          # Fix Expo assets (_expo folder)
+          for file in dist/*.html; do
+            sed -i 's|src="/_expo/|src="/MedTutor/_expo/|g' "$file"
+            sed -i 's|href="/_expo/|href="/MedTutor/_expo/|g' "$file"
+          done
 
-      # 6️⃣ Verify build output (optional but helpful)
-      - name: Verify dist folder
+          # Fix custom images/assets folder
+          for file in dist/*.html; do
+            sed -i 's|src="/assets/|src="/MedTutor/assets/|g' "$file"
+            sed -i 's|href="/assets/|href="/MedTutor/assets/|g' "$file"
+          done
+
+          # Copy index.html to 404.html for SPA routing
+          cp dist/index.html dist/404.html
+
+      # 6️⃣ Verify build output
+      - name: Verify dist/ folder
         run: ls -la dist
 
       # 7️⃣ Setup GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 8️⃣ Upload Pages artifact
+      # 8️⃣ Optional: Cleanup old artifacts
+      - name: Cleanup old artifacts
+        run: |
+          echo "Cleaning up old GitHub Pages artifacts..."
+          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+          gh run artifacts delete --all || echo "No old artifacts found"
+
+      # 9️⃣ Upload Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+          # ✅ Keep default name 'github-pages' for deploy
 
-      # 9️⃣ Deploy to GitHub Pages
+      # 🔟 Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

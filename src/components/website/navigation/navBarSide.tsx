@@ -9,7 +9,7 @@ import { PdfLink } from "./navBarTop";
 
 export default function NavigationSide() {
   const isDev = process.env.NODE_ENV === "development";
-  const BASE_URL = isDev ? "" : "padma-webdev.github.io"; // empty in dev, repo prefix in prod
+  const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
   const navigation = useNavigation();
   // const [region, setRegion] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
