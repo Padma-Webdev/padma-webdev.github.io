@@ -10,7 +10,7 @@ export const contactStyles = StyleSheet.create({
   mainContainerMobile: {
     width: "100%",
     backgroundColor: "#080e19",
-    height: "15%",
+    height: "19%",
   },
   buttonViewMobile: {
     width: "80%",
@@ -20,19 +20,19 @@ export const contactStyles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   buttonViewWeb: {
-    width: "35%",
+    width: "75%",
     height: "37%",
     marginTop: 20,
     flexDirection: "row",
     alignSelf: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
   },
   buttonStyle: {
     backgroundColor: "#0F1727",
-    width: "48%",
+    width: "30%",
     borderRadius: 15,
     borderWidth: 2,
-    height:"80%",
+    height:"85%",
     borderColor: "#06443e",
   },
     buttonStyleMobile: {

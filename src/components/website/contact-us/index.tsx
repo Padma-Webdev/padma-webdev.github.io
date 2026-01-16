@@ -4,14 +4,30 @@ import {
   Dimensions,
   TouchableOpacity,
   Linking,
+  Alert,
 } from "react-native";
 import { courseStyles } from "../courses/styles";
 import { contactStyles } from "./styles";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone,BoomBox } from "lucide-react";
 
 export default function ContactUsContainer() {
   const screenWidth = Dimensions.get("window").width;
   const isSmallScreen = screenWidth < 740;
+
+  const handlePress = async () => {
+    const url = 'https://chat.whatsapp.com/E5HhfVAEKjsK0tm6ZWvxE4';
+
+    // Check if the device can open the URL
+    const supported = await Linking.canOpenURL(url);
+
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      Alert.alert('Cannot open this link', 'Please make sure WhatsApp is installed.');
+    }
+  };
+
+  
   return (
     <View
       style={
@@ -70,6 +86,22 @@ export default function ContactUsContainer() {
             <Text style={contactStyles.infoText}>+353 874 099759</Text>
           </View>
         </View>
+
+        <TouchableOpacity
+          style={
+            isSmallScreen
+              ? contactStyles.buttonStyleMobile
+              : contactStyles.buttonStyle
+          }
+          onPress={handlePress}
+        >
+          <View style={contactStyles.buttonMargin}>
+            <BoomBox style={contactStyles.iconStyle} />
+            <Text style={contactStyles.titleText}>Join Us</Text>
+            <Text style={contactStyles.subTitle}>Join our HPAT WhatsApp Community</Text>
+            <Text style={contactStyles.infoText}>HPAT WhatsApp Community</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
