@@ -36,14 +36,14 @@ export const SmallGroupTutoring = () => {
               : groupStyles.groupHeader
           }
         >
-          Pricing:{" "}
+          Price:{" "}
         </Text>
         <Text
           style={
             isSmallScreen ? groupStyles.pricingSmallScreen : groupStyles.pricing
           }
         >
-          €20 per session
+          €20 per group session
         </Text>
       </View>
       <Text

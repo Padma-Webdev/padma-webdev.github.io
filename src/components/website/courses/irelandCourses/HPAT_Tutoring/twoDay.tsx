@@ -37,14 +37,14 @@ export const TwoDayCourse = () => {
               : groupStyles.groupHeader
           }
         >
-          Pricing:{" "}
+          Price:{" "}
         </Text>
         <Text
           style={
             isSmallScreen ? groupStyles.pricingSmallScreen : groupStyles.pricing
           }
         >
-          Price: €150 for 2 days
+         €150
         </Text>
       </View>
       <Text

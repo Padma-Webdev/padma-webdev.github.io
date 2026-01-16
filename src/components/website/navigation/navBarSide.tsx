@@ -152,9 +152,7 @@ export default function NavigationSide() {
               }}
             >
               <View style={{ marginTop: 2 }}>
-                <Text style={styles.headerText}>
-                  1:1 & Small Group HPAT Preparation(Online)
-                </Text>
+                <Text style={styles.headerText}>1-2-1 & Group Tutoring</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
@@ -164,9 +162,7 @@ export default function NavigationSide() {
               }}
             >
               <View style={{ marginTop: 10 }}>
-                <Text style={styles.headerText}>
-                  2 Days and 8 Week HPAT Preparation Course
-                </Text>
+                <Text style={styles.headerText}>2 Day & 8 Week Courses</Text>
               </View>
             </TouchableOpacity>
           </View>

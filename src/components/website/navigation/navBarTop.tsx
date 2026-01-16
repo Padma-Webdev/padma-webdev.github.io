@@ -10,8 +10,8 @@ type PdfLinkProps = {
   pdfPath: string; // e.g. "/pdfs/terms.pdf"
 };
 
-  const isDev = process.env.NODE_ENV === "development";
-  const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
+const isDev = process.env.NODE_ENV === "development";
+const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
 
 export const PdfLink: React.FC<PdfLinkProps> = ({ label, pdfPath }) => {
   const isDev = process.env.NODE_ENV === "development";
@@ -166,7 +166,10 @@ export default function NavigationTop() {
           style={styles.logoSpace}
           onPress={() => navigation.navigate(RoutePath.Home as never)}
         >
-          <Image source={{ uri: `${BASE_URL}/images/logo.png` }} style={styles.headerLogo} />
+          <Image
+            source={{ uri: `${BASE_URL}/images/logo.png` }}
+            style={styles.headerLogo}
+          />
           <Text style={styles.headerLogoText}>MedTutor</Text>
         </TouchableOpacity>
         <View style={styles.headerContentSpace}> {displayROICourses()}</View>
@@ -196,18 +199,14 @@ export default function NavigationTop() {
             onPress={() => navigation.navigate(RoutePath.GROUPPREP as never)}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
-              <Text style={styles.headerText}>
-                1:1 & Small Group HPAT Preparation(Online)
-              </Text>
+              <Text style={styles.headerText}> 1-2-1 & Group Tutoring</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate(RoutePath.WEEKPREP as never)}
           >
             <View style={{ marginTop: 2, marginBottom: 2 }}>
-              <Text style={styles.headerText}>
-                2 Days and 8 Week HPAT Preparation Course
-              </Text>
+              <Text style={styles.headerText}>2 Day & 8 Week Courses</Text>
             </View>
           </TouchableOpacity>
         </View>

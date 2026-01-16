@@ -38,14 +38,14 @@ export const PersonalisedTutoring = () => {
               : groupStyles.groupHeader
           }
         >
-          Pricing:{" "}
+          Price:{" "}
         </Text>
         <Text
           style={
             isSmallScreen ? groupStyles.pricingSmallScreen : groupStyles.pricing
           }
         >
-          From €35 per hour
+          €34 per session (15% discount from €40)
         </Text>
       </View>
       <Text
@@ -121,7 +121,8 @@ export const PersonalisedTutoringFAQ = () => {
         What is included in 1:1 HPAT tutoring?
       </Text>
       <Text
-        style={isSmallScreen
+        style={
+          isSmallScreen
             ? groupStyles.faqAnswersSmallScreen
             : groupStyles.faqAnswers
         }
@@ -129,60 +130,116 @@ export const PersonalisedTutoringFAQ = () => {
         {"\u2022"} Personalised coaching, targeted strategy work, guided
         practice, and detailed feedback focused on improving performance.
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqQuestionsSmallScreen
-            : groupStyles.faqQuestions}>Do you provide notes?</Text>
-      <Text style={isSmallScreen
+            : groupStyles.faqQuestions
+        }
+      >
+        Do you provide notes?
+      </Text>
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqAnswersSmallScreen
-            : groupStyles.faqAnswers}>
+            : groupStyles.faqAnswers
+        }
+      >
         {"\u2022"} Yes. We provide notes to support revision and reinforce
         strategies covered in sessions.
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqAnswersSmallScreen
-            : groupStyles.faqAnswers}>
+            : groupStyles.faqAnswers
+        }
+      >
         Can tutoring focus only on my weakest HPAT section?
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqAnswersSmallScreen
-            : groupStyles.faqAnswers}>
+            : groupStyles.faqAnswers
+        }
+      >
         {"\u2022"} Yes. Sessions are tailored to the areas that will improve
         your overall performance fastest.
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqQuestionsSmallScreen
-            : groupStyles.faqQuestions}>How quickly can I start?</Text>
-      <Text style={isSmallScreen
+            : groupStyles.faqQuestions
+        }
+      >
+        How quickly can I start?
+      </Text>
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqAnswersSmallScreen
-            : groupStyles.faqAnswers}>
+            : groupStyles.faqAnswers
+        }
+      >
         {"\u2022"} After booking, our Coordinator will contact you to arrange
         sessions as soon as possible.
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqQuestionsSmallScreen
-            : groupStyles.faqQuestions}>
+            : groupStyles.faqQuestions
+        }
+      >
         How many sessions will I need?
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqAnswersSmallScreen
-            : groupStyles.faqAnswers}>
+            : groupStyles.faqAnswers
+        }
+      >
         {"\u2022"} It depends on your starting point and exam date. Your tutor
         will recommend an effective plan.
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqQuestionsSmallScreen
-            : groupStyles.faqQuestions}>Is tutoring online?</Text>
-      <Text style={isSmallScreen
+            : groupStyles.faqQuestions
+        }
+      >
+        Is tutoring online?
+      </Text>
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqAnswersSmallScreen
-            : groupStyles.faqAnswers}>
+            : groupStyles.faqAnswers
+        }
+      >
         {"\u2022"} Yes. All sessions are delivered online.
       </Text>
-      <Text style={isSmallScreen
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqQuestionsSmallScreen
-            : groupStyles.faqQuestions}>What is your refund policy?</Text>
-      <Text style={isSmallScreen
+            : groupStyles.faqQuestions
+        }
+      >
+        What is your refund policy?
+      </Text>
+      <Text
+        style={
+          isSmallScreen
             ? groupStyles.faqQuestionsSmallScreen
-            : groupStyles.faqQuestions}>
+            : groupStyles.faqQuestions
+        }
+      >
         {"\u2022"} Fees are refundable if cancelled at least 48 hours in
         advance.
       </Text>
