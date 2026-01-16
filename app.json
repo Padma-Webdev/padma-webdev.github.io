@@ -23,8 +23,7 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png",
-      "publicPath": "/"
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font",
