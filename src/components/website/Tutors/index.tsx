@@ -144,7 +144,7 @@ export default function TutorsContainer() {
               alignSelf: "center",
             }}
           >
-            Jamal Elsiddig
+            Jamal El Siddig
           </Text>
           <View style={{ margin: 10, marginLeft: 20 }}>
             <Text style={{ color: "white", fontSize: 15 }}>
