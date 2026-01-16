@@ -5,12 +5,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { RoutePath } from "../../navigation/routes";
 import { useNavigation } from "@react-navigation/native";
-import logo from "../../../../public/images/logo.png";
 import { PdfLink } from "./navBarTop";
 
 export default function NavigationSide() {
   const isDev = process.env.NODE_ENV === "development";
-  const BASE_URL = isDev ? "" : "/"; // empty in dev, repo prefix in prod
+  const BASE_URL = isDev ? "" : "padma-webdev.github.io"; // empty in dev, repo prefix in prod
   const navigation = useNavigation();
   // const [region, setRegion] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
