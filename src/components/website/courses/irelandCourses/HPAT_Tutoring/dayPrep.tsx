@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Linking,
+  GestureResponderEvent,
 } from "react-native";
 import { hpatStyles } from "../HPAT/hpatStyles";
 import { groupStyles } from "./groupPrepStyles";
@@ -16,6 +17,26 @@ import { personalStyles } from "./personalStyles";
 import { TwoDayCourse, TwoDayTutoringFAQs } from "./twoDay";
 import { EightWeekCourse, EightWeekCourseFAQs } from "./eightDay";
 
+type ButtonState = "default" | "pressed";
+
+export const getButtonColor = (state: ButtonState): string => {
+  switch (state) {
+    case "pressed":
+      return "#0B3D37"; // darker teal
+    case "default":
+    default:
+      return "#23CFBB";
+  }
+};
+export const getTextColor = (state: ButtonState): string => {
+  switch (state) {
+    case "pressed":
+      return "white"; // darker teal
+    case "default":
+    default:
+      return "black";
+  }
+};
 export default function DayPrepContainer() {
   const screenWidth = Dimensions.get("window").width;
   const screenHeight = Dimensions.get("window").height;
@@ -25,6 +46,18 @@ export default function DayPrepContainer() {
   };
   const [groupTutor, setGroupTutor] = useState(false);
   const [showFAQs, setShowFAQs] = useState(false);
+  const [buttononeState, setoneButtonState] = useState<ButtonState>("default");
+  const [buttonGroupState, setgroupButtonState] =
+    useState<ButtonState>("default");
+
+  const handlePressDayIn = (_: GestureResponderEvent) => {
+    setgroupButtonState("default");
+    setoneButtonState("pressed");
+  };
+  const handlePressWeekIn = (_: GestureResponderEvent) => {
+    setgroupButtonState("pressed");
+    setoneButtonState("default");
+  };
 
   const switchToGroup = () => {
     setGroupTutor(true);
@@ -125,37 +158,41 @@ export default function DayPrepContainer() {
           }
         >
           <TouchableOpacity
-            style={
+            onPress={switchToPersonal}
+            onPressIn={handlePressDayIn}
+            style={[
               isSmallScreen
                 ? personalStyles.personalTutorSmallScreen
-                : personalStyles.personalTutor
-            }
-            onPress={switchToPersonal}
+                : personalStyles.personalTutor,
+              { backgroundColor: getButtonColor(buttononeState) },
+            ]}
           >
             <Text
-              style={
+              style={[
                 isSmallScreen
                   ? personalStyles.buttonTextSmallScreen
-                  : personalStyles.buttonText
-              }
+                  : personalStyles.buttonText,
+                { color: getTextColor(buttononeState) },
+              ]}
             >
               2 Day Course
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={
-              isSmallScreen
-                ? personalStyles.personalTutorSmallScreen
-                : personalStyles.personalTutor
-            }
-            onPress={switchToGroup}
+          onPress={switchToGroup}
+            onPressIn={handlePressWeekIn}
+            style={[isSmallScreen
+                            ? personalStyles.personalTutorSmallScreen
+                            : personalStyles.personalTutor,{ backgroundColor: getButtonColor(buttonGroupState) },
+                        ]}
+                      
           >
             <Text
               style={
-                isSmallScreen
-                  ? personalStyles.button2TextSmallScreen
-                  : personalStyles.button2Text
-              }
+                              [isSmallScreen
+                                ? personalStyles.button2TextSmallScreen
+                                : personalStyles.button2Text,{color:getTextColor(buttonGroupState)}]
+                            }
             >
               8 Week Course
             </Text>
@@ -242,7 +279,7 @@ export default function DayPrepContainer() {
             style={{
               flex: 1,
               width: screenWidth,
-              height: isSmallScreen ? screenHeight * 1.40 : screenHeight * 1.55,
+              height: isSmallScreen ? screenHeight * 1.4 : screenHeight * 1.55,
             }}
           >
             <View
@@ -256,7 +293,7 @@ export default function DayPrepContainer() {
                 opacity: 0.3,
                 width: screenWidth,
                 height: isSmallScreen
-                  ? screenHeight * 1.40
+                  ? screenHeight * 1.4
                   : screenHeight * 1.55,
               }}
             />

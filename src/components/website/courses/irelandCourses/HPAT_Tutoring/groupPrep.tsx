@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Linking,
+  GestureResponderEvent,
 } from "react-native";
 import { hpatStyles } from "../HPAT/hpatStyles";
 import { groupStyles } from "./groupPrepStyles";
@@ -19,6 +20,26 @@ import {
 import { SmallGroupTutoring, SmallGroupTutoringFAQs } from "./smallGroup";
 import { personalStyles } from "./personalStyles";
 
+type ButtonState = "default" | "pressed";
+
+export const getButtonColor = (state: ButtonState): string => {
+  switch (state) {
+    case "pressed":
+      return "#0B3D37"; // darker teal
+    case "default":
+    default:
+      return "#23CFBB";
+  }
+}
+export const getTextColor = (state: ButtonState): string => {
+  switch (state) {
+    case "pressed":
+      return "white"; // darker teal
+    case "default":
+    default:
+      return "black";
+  }
+}
 export default function GroupPrepContainer() {
   const screenWidth = Dimensions.get("window").width;
   const screenHeight = Dimensions.get("window").height;
@@ -28,10 +49,28 @@ export default function GroupPrepContainer() {
   };
   const [groupTutor, setGroupTutor] = useState(false);
   const [showFAQs, setShowFAQs] = useState(false);
+    const [buttononeState, setoneButtonState] =
+    useState<ButtonState>("default");
+        const [buttonGroupState, setgroupButtonState] =
+    useState<ButtonState>("default");
+
+  const handlePressOneIn = (_: GestureResponderEvent) => {
+    setgroupButtonState("default");
+    setoneButtonState("pressed");
+  };
+    const handlePressgroupIn = (_: GestureResponderEvent) => {
+    setgroupButtonState("pressed");
+    setoneButtonState("default");
+  };
+
+  // const handlePressOut = (_: GestureResponderEvent) => {
+  //   setoneButtonState("default");
+  // };
 
   const switchToGroup = () => {
     setGroupTutor(true);
   };
+    useEffect(() => {}, [groupTutor]);
   const switchToPersonal = () => {
     setGroupTutor(false);
   };
@@ -129,36 +168,36 @@ export default function GroupPrepContainer() {
           }
         >
           <TouchableOpacity
-            style={
-              isSmallScreen
-                ? personalStyles.personalTutorSmallScreen
-                : personalStyles.personalTutor
-            }
             onPress={switchToPersonal}
+            onPressIn={handlePressOneIn}
+            style={[isSmallScreen
+                ? personalStyles.personalTutorSmallScreen
+                : personalStyles.personalTutor,{ backgroundColor: getButtonColor(buttononeState) },
+            ]}
           >
             <Text
               style={
-                isSmallScreen
+                [isSmallScreen
                   ? personalStyles.buttonTextSmallScreen
-                  : personalStyles.buttonText
+                  : personalStyles.buttonText,{color:getTextColor(buttononeState)}]
               }
             >
               1:1 HPAT Tutoring
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={
-              isSmallScreen
-                ? personalStyles.personalTutorSmallScreen
-                : personalStyles.personalTutor
-            }
             onPress={switchToGroup}
+            onPressIn={handlePressgroupIn}
+            style={[isSmallScreen
+                ? personalStyles.personalTutorSmallScreen
+                : personalStyles.personalTutor,{ backgroundColor: getButtonColor(buttonGroupState) },
+            ]}
           >
             <Text
               style={
-                isSmallScreen
+                [isSmallScreen
                   ? personalStyles.button2TextSmallScreen
-                  : personalStyles.button2Text
+                  : personalStyles.button2Text,{color:getTextColor(buttonGroupState)}]
               }
             >
               Small Group Tutoring
@@ -208,8 +247,8 @@ export default function GroupPrepContainer() {
         }
       >
         <TouchableOpacity
-          style={personalStyles.detailsButton1}
           onPress={switchToCourse}
+          style={personalStyles.detailsButton1} 
         >
           <Text
             style={
