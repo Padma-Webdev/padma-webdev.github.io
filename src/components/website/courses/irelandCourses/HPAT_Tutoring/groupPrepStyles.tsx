@@ -28,7 +28,7 @@ export const groupStyles = StyleSheet.create({
     marginBottom: 6,
     marginLeft: 35,
   },
-    groupHeaderSmallScreen: {
+  groupHeaderSmallScreen: {
     fontSize: 18,
     color: "#f8fefe",
     marginBottom: 6,
@@ -53,12 +53,24 @@ export const groupStyles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: 45,
   },
-    groupBoldHeaderSmallScreen: {
+  groupBoldHeaderSmallScreen: {
     fontSize: 15,
     fontWeight: "bold",
     color: "#f8fefe",
     marginBottom: 10,
     marginLeft: 15,
+  },
+  perSession: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#f8fefe",
+    marginBottom: 10,
+  },
+    perSessionReg: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#f8fefe",
+    marginBottom: 10,
   },
   groupBoldCourse: {
     fontSize: 15,
@@ -99,7 +111,7 @@ export const groupStyles = StyleSheet.create({
     marginLeft: 35,
     textDecorationLine: "underline",
   },
-    pricingSmallScreen: {
+  pricingSmallScreen: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#f8fefe",
@@ -120,7 +132,7 @@ export const groupStyles = StyleSheet.create({
     marginBottom: 2,
     marginLeft: 40,
   },
-    faqQuestionsSmallScreen: {
+  faqQuestionsSmallScreen: {
     fontSize: 15,
     fontWeight: "bold",
     color: "#f8fefe",
@@ -147,7 +159,7 @@ export const groupStyles = StyleSheet.create({
     marginBottom: 8,
     marginLeft: 50,
   },
-    faqAnswersSmallScreen: {
+  faqAnswersSmallScreen: {
     fontSize: 15,
     color: "#f8fefe",
     marginBottom: 8,
@@ -159,7 +171,7 @@ export const groupStyles = StyleSheet.create({
     marginBottom: 5,
     marginLeft: 50,
   },
-    pricingNextLineSmallScreen: {
+  pricingNextLineSmallScreen: {
     fontSize: 15,
     color: "#f8fefe",
     marginBottom: 5,

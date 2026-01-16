@@ -242,7 +242,7 @@ export default function DayPrepContainer() {
             style={{
               flex: 1,
               width: screenWidth,
-              height: isSmallScreen ? screenHeight * 1.25 : screenHeight * 1.45,
+              height: isSmallScreen ? screenHeight * 1.40 : screenHeight * 1.55,
             }}
           >
             <View
@@ -256,8 +256,8 @@ export default function DayPrepContainer() {
                 opacity: 0.3,
                 width: screenWidth,
                 height: isSmallScreen
-                  ? screenHeight * 1.25
-                  : screenHeight * 1.45,
+                  ? screenHeight * 1.40
+                  : screenHeight * 1.55,
               }}
             />
             <View style={hpatStyles.backButton}>

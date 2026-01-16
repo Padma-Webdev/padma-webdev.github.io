@@ -82,6 +82,15 @@ export default function JuniorCertificateChangeContainer() {
           and university goals, helping you map out a clear, confident path to
           medical school success.
         </Text>
+        <View style={{ alignSelf: "center" }}>
+          <Text
+            style={
+              isSmallScreen ? groupStyles.perSession : groupStyles.perSessionReg
+            }
+          >
+            Price: €25 per session
+          </Text>
+        </View>
         <TouchableOpacity
           style={
             isSmallScreen

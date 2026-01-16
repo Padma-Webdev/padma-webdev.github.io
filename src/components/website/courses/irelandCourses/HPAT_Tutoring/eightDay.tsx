@@ -37,7 +37,7 @@ export const EightWeekCourse = () => {
               : groupStyles.groupHeader
           }
         >
-         Price: {" "}
+          Price:{" "}
         </Text>
         <Text
           style={
@@ -110,6 +110,35 @@ export const EightWeekCourse = () => {
       >
         {"\u2022"} Ongoing academic support
       </Text>
+      <View style={{ marginTop: 20 }}>
+        <Text
+          style={
+            isSmallScreen
+              ? groupStyles.groupBoldHeaderSmallScreen
+              : groupStyles.groupBoldHeader
+          }
+        >
+          Tentative Dates in 2026:
+        </Text>
+        <Text
+          style={
+            isSmallScreen
+              ? groupStyles.pricingNextLineSmallScreen
+              : groupStyles.pricingNextLine
+          }
+        >
+          {"\u2022"} Sept: 5th, 12th, 19th and 26th
+        </Text>
+        <Text
+          style={
+            isSmallScreen
+              ? groupStyles.pricingNextLineSmallScreen
+              : groupStyles.pricingNextLine
+          }
+        >
+          {"\u2022"} Oct: 10th, 17th, 24th and 31st
+        </Text>
+      </View>
     </View>
   );
 };

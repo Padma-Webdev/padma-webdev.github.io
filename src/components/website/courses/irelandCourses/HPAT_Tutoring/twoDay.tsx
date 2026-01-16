@@ -110,6 +110,44 @@ export const TwoDayCourse = () => {
       >
         {"\u2022"} Proven exam strategies
       </Text>
+      <View style={{marginTop:20}}>
+      <Text
+        style={
+          isSmallScreen
+            ? groupStyles.groupBoldHeaderSmallScreen
+            : groupStyles.groupBoldHeader
+        }
+      >
+        Tentative Dates in 2026:
+      </Text>
+      <Text
+        style={
+          isSmallScreen
+            ? groupStyles.pricingNextLineSmallScreen
+            : groupStyles.pricingNextLine
+        }
+      >
+        {"\u2022"} June: 27 and 28
+      </Text>
+      <Text
+        style={
+          isSmallScreen
+            ? groupStyles.pricingNextLineSmallScreen
+            : groupStyles.pricingNextLine
+        }
+      >
+        {"\u2022"} August 22 and 23
+      </Text>
+      <Text
+        style={
+          isSmallScreen
+            ? groupStyles.pricingNextLineSmallScreen
+            : groupStyles.pricingNextLine
+        }
+      >
+        {"\u2022"} Dec: 12 and 13
+      </Text>
+      </View>
     </View>
   );
 };

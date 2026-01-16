@@ -79,6 +79,17 @@ export default function LeavingCertContainer() {
           grades and subject choices needed for your target universities,
           helping you build a clear and realistic roadmap to success.
         </Text>
+        <View style={{alignSelf:"center"}}>
+        <Text
+          style={
+            isSmallScreen
+              ? groupStyles.perSession
+              : groupStyles.perSessionReg
+          }
+        >
+          Price: €30 per session
+        </Text>
+        </View>
         <TouchableOpacity
           style={
             isSmallScreen
