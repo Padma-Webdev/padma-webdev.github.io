@@ -262,10 +262,10 @@ export default function DayPrepContainer() {
         >
           <Text
             style={
-              isSmallScreen
-                ? personalStyles.buttonCourseTextSmallScreen
-                : personalStyles.buttonCourseText
-            }
+                          [isSmallScreen
+                            ? personalStyles.buttonCourseTextSmallScreen
+                            : personalStyles.buttonCourseText
+                        ,{ color: getTextColor(buttonCourseState) },]}
           >
             Course Content
           </Text>
@@ -278,7 +278,7 @@ export default function DayPrepContainer() {
                         { backgroundColor: getSecondButtonColor(buttonFAQState) },
                       ]}
         >
-          <Text style={personalStyles.buttonCourseText2}>FAQs</Text>
+          <Text style={[personalStyles.buttonCourseText2,{ color: getTextColor(buttonFAQState) },]}>FAQs</Text>
         </TouchableOpacity>
       </View>
     );
