@@ -16,6 +16,7 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { personalStyles } from "./personalStyles";
 import { TwoDayCourse, TwoDayTutoringFAQs } from "./twoDay";
 import { EightWeekCourse, EightWeekCourseFAQs } from "./eightDay";
+import { getSecondButtonColor } from "./groupPrep";
 
 type ButtonState = "default" | "pressed";
 
@@ -47,6 +48,9 @@ export default function DayPrepContainer() {
   const [groupTutor, setGroupTutor] = useState(false);
   const [showFAQs, setShowFAQs] = useState(false);
   const [buttononeState, setoneButtonState] = useState<ButtonState>("default");
+  const [buttonCourseState, setCourseButtonState] = useState<ButtonState>("default");
+    const [buttonFAQState, setFAQButtonState] =
+      useState<ButtonState>("default");
   const [buttonGroupState, setgroupButtonState] =
     useState<ButtonState>("default");
 
@@ -58,6 +62,15 @@ export default function DayPrepContainer() {
     setgroupButtonState("pressed");
     setoneButtonState("default");
   };
+
+      const handlePressCourse = (_: GestureResponderEvent) => {
+      setFAQButtonState("default");
+      setCourseButtonState("pressed");
+    };
+    const handlePressgFAQ= (_: GestureResponderEvent) => {
+      setFAQButtonState("pressed");
+      setCourseButtonState("default");
+    };
 
   const switchToGroup = () => {
     setGroupTutor(true);
@@ -241,8 +254,11 @@ export default function DayPrepContainer() {
         }
       >
         <TouchableOpacity
-          style={personalStyles.detailsButton1}
           onPress={switchToCourse}
+          onPressIn={handlePressCourse}
+          style={[personalStyles.detailsButton1,
+                        { backgroundColor: getSecondButtonColor(buttonCourseState) },
+                      ]}
         >
           <Text
             style={
@@ -255,8 +271,12 @@ export default function DayPrepContainer() {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={personalStyles.detailsButton1}
           onPress={switchToFAQs}
+
+        onPressIn={handlePressgFAQ}
+          style={[personalStyles.detailsButton1,
+                        { backgroundColor: getSecondButtonColor(buttonFAQState) },
+                      ]}
         >
           <Text style={personalStyles.buttonCourseText2}>FAQs</Text>
         </TouchableOpacity>
