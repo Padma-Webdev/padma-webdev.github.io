@@ -10,15 +10,15 @@ type PdfLinkProps = {
   pdfPath: string; // e.g. "/pdfs/terms.pdf"
 };
 
-const isDev = process.env.NODE_ENV === "development";
-const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
+const BASE_URL = process.env.PUBLIC_URL || '.'// empty in dev, repo prefix in prod
 
 export const PdfLink: React.FC<PdfLinkProps> = ({ label, pdfPath }) => {
-  const isDev = process.env.NODE_ENV === "development";
-  const BASE_URL = isDev ? "" : "/MedTutor";
+const BASE_URL = process.env.PUBLIC_URL || '.'
   const openPdf = () => {
-    if (Platform.OS === "web") {
-      window.open(`${BASE_URL}${pdfPath}`, "_blank", "noopener,noreferrer");
+    if (Platform.OS === 'web') {
+      // Ensure there's exactly one slash between BASE_URL and pdfPath
+      const url = `${BASE_URL.replace(/\/$/, '')}/${pdfPath.replace(/^\/+/, '')}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -236,14 +236,14 @@ export default function NavigationTop() {
               <Text style={styles.headerText}>Section 1</Text>
             </View>
           </TouchableOpacity> */}
-          <PdfLink label="Section 1" pdfPath="/pdfs/Section1.pdf" />
+          <PdfLink label="Section 1" pdfPath="pdfs/Section1.pdf" />
           <PdfLink
             label="HPAT Scoring Guide"
-            pdfPath="/pdfs/HPAT_Scoring_Guide.pdf"
+            pdfPath="pdfs/HPAT_Scoring_Guide.pdf"
           />
           <PdfLink
             label="HPAT Changes 2027"
-            pdfPath="/pdfs/HPAT_Changes_2027.pdf"
+            pdfPath="pdfs/HPAT_Changes_2027.pdf"
           />
           {/* <TouchableOpacity
             onPress={() => downloadPDF("HPAT Scoring Guide.pdf")}

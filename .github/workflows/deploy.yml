@@ -21,30 +21,70 @@ jobs:
       name: github-pages
 
     steps:
+      # 1️⃣ Checkout repo
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # 4️⃣ Build Expo Web
       - name: Build Expo Web
         run: |
           rm -rf dist
-          npx expo export --platform web --base-path /MedTutor --output-dir dist
-          cp dist/index.html dist/404.html
+          npx expo export --platform web --clear --output-dir dist
 
+      # 5️⃣ Rewrite paths for GitHub Pages
+      - name: Fix paths for GitHub Pages
+        run: |
+          echo "Fixing paths in HTML files for GitHub Pages..."
+          for file in dist/*.html; do
+            # Fix Expo scripts/assets
+            sed -i 's|src="/_expo/|src="./_expo/|g' "$file"
+            sed -i 's|href="/_expo/|href="./_expo/|g' "$file"
+
+            # Fix favicon
+            sed -i 's|href="/favicon.ico"|href="./favicon.ico"|g' "$file"
+
+            # Fix assets (images, PDFs, etc)
+            sed -i 's|src="/assets/|src="./assets/|g' "$file"
+            sed -i 's|href="/assets/|href="./assets/|g' "$file"
+            sed -i 's|src="/pdfs/|src="./pdfs/|g' "$file"
+            sed -i 's|href="/pdfs/|href="./pdfs/|g' "$file"
+
+            # Copy index.html to 404.html for SPA routing
+            cp dist/index.html dist/404.html
+          done
+
+      # 6️⃣ Verify dist folder
+      - name: Verify dist/ folder
+        run: ls -la dist
+
+      # 7️⃣ Setup GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # 8️⃣ Optional: Cleanup old artifacts
+      - name: Cleanup old artifacts
+        run: |
+          echo "Cleaning up old GitHub Pages artifacts..."
+          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+          gh run artifacts delete --all || echo "No old artifacts found"
+
+      # 9️⃣ Upload Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
+      # 🔟 Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

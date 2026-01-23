@@ -39,27 +39,31 @@ jobs:
       - name: Build Expo Web
         run: |
           rm -rf dist
-          npx expo export --platform web --output-dir dist
+          npx expo export --platform web --clear --output-dir dist
 
-      # 5️⃣ Fix asset paths and images for GitHub Pages
+      # 5️⃣ Rewrite paths for GitHub Pages
       - name: Fix paths for GitHub Pages
         run: |
-          # Fix Expo assets (_expo folder)
+          echo "Fixing paths in HTML files for GitHub Pages..."
           for file in dist/*.html; do
-            sed -i 's|src="/_expo/|src="/MedTutor/_expo/|g' "$file"
-            sed -i 's|href="/_expo/|href="/MedTutor/_expo/|g' "$file"
+            # Fix Expo scripts/assets
+            sed -i 's|src="/_expo/|src="./_expo/|g' "$file"
+            sed -i 's|href="/_expo/|href="./_expo/|g' "$file"
+
+            # Fix favicon
+            sed -i 's|href="/favicon.ico"|href="./favicon.ico"|g' "$file"
+
+            # Fix assets (images, PDFs, etc)
+            sed -i 's|src="/assets/|src="./assets/|g' "$file"
+            sed -i 's|href="/assets/|href="./assets/|g' "$file"
+            sed -i 's|src="/pdfs/|src="./pdfs/|g' "$file"
+            sed -i 's|href="/pdfs/|href="./pdfs/|g' "$file"
+
+            # Copy index.html to 404.html for SPA routing
+            cp dist/index.html dist/404.html
           done
 
-          # Fix custom images/assets folder
-          for file in dist/*.html; do
-            sed -i 's|src="/assets/|src="/MedTutor/assets/|g' "$file"
-            sed -i 's|href="/assets/|href="/MedTutor/assets/|g' "$file"
-          done
-
-          # Copy index.html to 404.html for SPA routing
-          cp dist/index.html dist/404.html
-
-      # 6️⃣ Verify build output
+      # 6️⃣ Verify dist folder
       - name: Verify dist/ folder
         run: ls -la dist
 
@@ -79,7 +83,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-          # ✅ Keep default name 'github-pages' for deploy
 
       # 🔟 Deploy to GitHub Pages
       - name: Deploy to GitHub Pages

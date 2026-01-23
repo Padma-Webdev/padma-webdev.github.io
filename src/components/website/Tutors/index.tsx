@@ -7,7 +7,7 @@ export default function TutorsContainer() {
   const screenWidth = Dimensions.get("window").width;
   const isSmallScreen = screenWidth < 740;
   const isDev = process.env.NODE_ENV === "development";
-  const BASE_URL = isDev ? "" : "/MedTutor"; // empty in dev, repo prefix in prod
+ const BASE_URL = process.env.PUBLIC_URL || '.'; // empty in dev, repo prefix in prod
 
   const courseTile = () => {
     const navigation = useNavigation();
