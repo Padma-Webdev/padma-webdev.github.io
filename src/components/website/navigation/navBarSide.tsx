@@ -195,11 +195,11 @@ const BASE_URL = process.env.PUBLIC_URL || '.' // empty in dev, repo prefix in p
             </TouchableOpacity>
           </View>
         )}
-        <TouchableOpacity onPress={() => handleFreeResources()}>
+        {/* <TouchableOpacity onPress={() => handleFreeResources()}>
           <View>
             <Text style={styles.headerText}>Free Resources</Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         {freeRes && (
           <View style={{ marginTop: -25, marginLeft: 20 }}>
             <PdfLink label="Section 1" pdfPath="/pdfs/Section1.pdf" />

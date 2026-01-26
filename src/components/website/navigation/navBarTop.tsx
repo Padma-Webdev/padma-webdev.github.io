@@ -134,11 +134,11 @@ export default function NavigationTop() {
             <Text style={styles.headerText}>Leaving Cert Grinds</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleFreeResources()}>
+        {/* <TouchableOpacity onPress={() => handleFreeResources()}>
           <View>
             <Text style={styles.headerText}>Free Resources</Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         {/* <TouchableOpacity>
           <View>
             <Text style={styles.headerText}>More</Text>
